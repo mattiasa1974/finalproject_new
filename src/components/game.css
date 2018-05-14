@@ -12,7 +12,7 @@ input {
   flex-wrap: wrap;
 }
 
-label {
+.game-input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
