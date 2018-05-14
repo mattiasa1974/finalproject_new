@@ -29,17 +29,13 @@ class Maincontainer extends React.Component {
     })
     console.log(groupA)
 
-    // const teamHome = this.props.games.map(game => game.homeTeam)
-    //
-    // const teamAway = this.props.games.map(game => game.awayTeam)
 
 
-    // const homeTeams = matches.filter( homeTeams )
+
 
     return (
       <div>
         <div>Maincontainer</div>
-        <pre>{ JSON.stringify(this.props.games, undefined, 2) }</pre>
 
         // send all groups as prop
         <GroupNavigationscontainer games={this.props.games} groups={uniqueGroups}/>
@@ -53,3 +49,5 @@ class Maincontainer extends React.Component {
 }
 
 export default Maincontainer
+
+// <pre>{ JSON.stringify(this.props.games, undefined, 2) }</pre>
