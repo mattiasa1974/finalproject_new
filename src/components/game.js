@@ -16,18 +16,26 @@ class Game extends React.Component {
     console.log('this.props: ', this.props)
     return (
       <div className="game-container">
-        <label>
-          <p>{game.homeTeam} – {game.awayTeam}</p>
-          <div className="game-row">
-          <input type="value" name="homeScore" />
-          <p>-</p>
-          <input type="value" name="awayScore" />
-        </div>
+          <label className="game-input">
+            <p>{game.homeTeam} – {game.awayTeam}</p>
+            <div className="game-row">
+            <input
+              type="value"
+              name="homeScore"
+              value={this.props.homeScore}
+              onChange={(event) => this.props.handleChangeHomeScore(event)} />
+            <p>-</p>
+            <input
+              type="value"
+              name="awayScore"
+              value={this.props.awayScore}
+              onChange={(event) => this.props.handleChangeAwayScore(event)}
+            />
+          </div>
         </label>
       </div>
     )
   }
-
 }
 
 export default Game
