@@ -1,6 +1,7 @@
 import React from "react"
 import GroupNavigationscontainer from "./groupnavigationcontainer"
 import Gametable from "./gametable"
+import Group from "./group"
 
 
 
@@ -18,15 +19,19 @@ class Maincontainer extends React.Component {
 
   render() {
     // get all groups from this.props.games
-    const groups = this.props.games.map(game => game.group);
+    const groups = this.props.games.map(game => game.group)
     const uniqueGroups = groups.filter( this.onlyUnique )
 
     // get all games from group A
 
+    const groupA = this.props.games.filter((game) => {
+      return game.group === "A"
+    })
+    console.log(groupA)
 
-    const teamHome = this.props.games.map(game => game.homeTeam)
-
-    const teamAway = this.props.games.map(game => game.awayTeam)
+    // const teamHome = this.props.games.map(game => game.homeTeam)
+    //
+    // const teamAway = this.props.games.map(game => game.awayTeam)
 
 
     // const homeTeams = matches.filter( homeTeams )
@@ -38,6 +43,8 @@ class Maincontainer extends React.Component {
 
         // send all groups as prop
         <GroupNavigationscontainer games={this.props.games} groups={uniqueGroups}/>
+        <Group A={groupA} />
+
 
 
       </div>
