@@ -176,6 +176,13 @@ class App extends React.Component {
   }
 }
 
+handleNewHomeScore = (matchId, homeTeam, homeScore) => {
+console.log(matchId, homeTeam, homeScore)
+}
+
+handleNewAwayScore = (matchId, awayTeam, awayScore) => {
+console.log(matchId, awayTeam, awayScore)
+}
 
 
 // const first = this.state.games[0]
@@ -185,7 +192,10 @@ class App extends React.Component {
       <div>
         Find me in src/app.js!
 
-        <Game game={this.state.games[0]} addHomeScore={this.handleNewHomeScore}/>
+        <Game game={this.state.games[0]}
+          addHomeScore={this.handleNewHomeScore}
+          addAwayScore={this.handleNewAwayScore}
+        />
 
       </div>
 

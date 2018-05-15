@@ -20,14 +20,18 @@ class Game extends React.Component {
     this.setState({
       newHomeScore: event.target.value,
     })
-console.log(event.target.value)
+    this.props.addHomeScore(this.props.game.matchId,
+      this.props.game.homeTeam,
+      event.target.value)
   }
 
   handleChangeAwayScore = event => {
     this.setState({
       newAwayScore: event.target.value
     })
-console.log(event.target.value)
+    this.props.addAwayScore(this.props.game.matchId,
+      this.props.game.awayTeam,
+      event.target.value)
   }
 
 
