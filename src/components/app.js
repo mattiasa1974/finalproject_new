@@ -192,7 +192,7 @@ console.log(matchId, awayTeam, awayScore)
       <div>
         Find me in src/app.js!
 
-        <Game game={this.state.games[0]}
+        <Game game={this.state.games}
           addHomeScore={this.handleNewHomeScore}
           addAwayScore={this.handleNewAwayScore}
         />
