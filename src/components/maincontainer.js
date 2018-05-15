@@ -29,7 +29,7 @@ class Maincontainer extends React.Component {
     })
     console.log(groupA)
 
-
+    const first = this.state.games[0]
 
 
 
@@ -40,6 +40,8 @@ class Maincontainer extends React.Component {
         // send all groups as prop
         <GroupNavigationscontainer games={this.props.games} groups={uniqueGroups}/>
         <Group A={groupA} />
+
+        <Game game={first} />
 
 
 

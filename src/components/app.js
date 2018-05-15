@@ -1,5 +1,5 @@
 import React from "react";
-import Maincontainer from "./maincontainer";
+import Game from "./game"
 
 class App extends React.Component {
 
@@ -178,15 +178,20 @@ class App extends React.Component {
 
 
 
+// const first = this.state.games[0]
+
   render() {
     return (
       <div>
         Find me in src/app.js!
-        <Maincontainer games={this.state.games} />
-      </div>
-    )
-  }
 
+        <Game game={this.state.games[0]} addHomeScore={this.handleNewHomeScore}/>
+
+      </div>
+
+    )
+
+  }
 }
 
 export default App

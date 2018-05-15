@@ -1,7 +1,7 @@
 import React from "react"
 import Game from "./game"
 import Groupnavigationscomponent from "./groupnavigationcomponent"
-
+import Game from "./game"
 
 class GroupNavigationscontainer extends React.Component {
 
@@ -24,7 +24,8 @@ class GroupNavigationscontainer extends React.Component {
         </div>
         <div className="grouprow">
         //filtrera ut games som tillhör en viss grupp (url)
-        { this.props.games.map(game =>  <Game game={game} />) }
+        <Game game={first} />
+
         </div>
 
       </div>
