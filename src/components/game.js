@@ -41,16 +41,14 @@ class Game extends React.Component {
 
     return (
       <div className="game-container">
-        {this.props.game.map((game, matchId) => (
-          <p>{game.homeTeam} – {game.awayTeam}</p>
-        ))}
+        <p>{this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
         <label>
             <input
               value={this.state.newHomeScore}
               onChange={this.handleChangeHomeScore}
               type="number"
               score={game.homeScore} >
-            </input>
+            </input> –
             <input
               onChange={this.handleChangeAwayScore}
               type="number"

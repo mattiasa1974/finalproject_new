@@ -1,5 +1,6 @@
 import React from "react";
 import Game from "./game"
+import Group from "./group"
 
 class App extends React.Component {
 
@@ -184,8 +185,12 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
 console.log(matchId, awayTeam, awayScore)
 }
 
+// const groupA = this.props.games.filter((game) => {
+//   return game.group === "A"
+// })
 
 // const first = this.state.games[0]
+
 
   render() {
     return (
@@ -196,6 +201,17 @@ console.log(matchId, awayTeam, awayScore)
           addHomeScore={this.handleNewHomeScore}
           addAwayScore={this.handleNewAwayScore}
         />
+        <Group />
+        {this.state.games.map((gamesA) => {
+          if (gamesA.group === "A")
+          {
+           <Group
+            groupmatchesA={gamesA}
+          />
+          console.log(gamesA)
+        }
+      })}
+
 
       </div>
 
