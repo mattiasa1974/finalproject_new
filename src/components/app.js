@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state =
       {
 
-    games: [
+    games:[
       {
         matchId: 1,
         date: "14/6",
@@ -178,16 +178,23 @@ class App extends React.Component {
 }
 
 handleNewHomeScore = (matchId, homeTeam, homeScore) => {
-  const newHomeScore = this.state.homeScore
-  this.setState({ homeScore: homeScore})
-  console.log(matchId, homeTeam, homeScore)
+  // console.log(matchId, homeTeam, homeScore)
+  // const newHomeScore = this.state.newhomeScore
+  // this.setState({ homeScore: homeScore})
+  const games = this.state.games
+  const index = games.findIndex((game) => game.matchId === matchId)
+  games[index].homeScore = homeScore
+  this.setState({games: games})
+
   }
 
 handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-  const newHomeScore = this.state.homeScore
-  this.setState({ awayScore: awayScore})
   console.log(matchId, awayTeam, awayScore)
+  const newAwayScore = this.state.awayScore
+  this.setState({ awayScore: awayScore})
 }
+
+
 
 // const groupA = this.props.games.filter((game) => {
 //   return game.group === "A"
@@ -197,28 +204,19 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
 
 
   render() {
+
+    const groupIdFromUrl = "C"
+
     return (
       <div>
-        Find me in src/app.js!
-
-        <Game game={this.state.games[0]}
-          addHomeScore={this.handleNewHomeScore}
-          addAwayScore={this.handleNewAwayScore}
-        />
-        <Group />
-        {this.state.games.map((gamesA) => {
-          if (gamesA.group === "A")
+        { this.state.games.map((gameData) => {
+          if (gameData.group === groupIdFromUrl)
           {
-           <Group
-            groupmatchesA={gamesA}
-          />
-          console.log(gamesA)
+           return <Game game={gameData} />
+          console.log(gameData)
         }
       })}
-
-
       </div>
-
     )
 
   }

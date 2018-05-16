@@ -7,9 +7,8 @@ class Group extends React.Component {
 
     return (
       <div>
-        <p>hej</p>
-        <p>{this.props.gamesA}</p>
-
+        <p>hello world</p>
+        <p>{this.props.groupmatches.group}</p>
 
       </div>
     )
