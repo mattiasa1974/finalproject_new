@@ -20,7 +20,7 @@ class Game extends React.Component {
     this.setState({
       newHomeScore: event.target.value,
     })
-    this.props.newHomeScore(this.props.game.matchId,
+    this.props.addHomeScore(this.props.game.matchId,
       this.props.game.homeTeam,
       event.target.value)
   }

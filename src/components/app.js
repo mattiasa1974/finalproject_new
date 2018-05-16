@@ -189,13 +189,9 @@ handleNewHomeScore = (matchId, homeTeam, homeScore) => {
   }
 
 handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-  // console.log(matchId, awayTeam, awayScore)
-  // const newAwayScore = this.state.awayScore
-  // this.setState({ awayScore: awayScore})
-  const games = this.state.games
-  const index = games.findIndex((game) => game.matchId === matchId)
-  games[index].awayScore = awayScore
-  this.setState({games: games})
+  console.log(matchId, awayTeam, awayScore)
+  const newAwayScore = this.state.awayScore
+  this.setState({ awayScore: awayScore})
 }
 
 
@@ -209,7 +205,7 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
 
   render() {
 
-    const groupIdFromUrl = "A"
+    const groupIdFromUrl = "C"
 
     return (
       <div>
