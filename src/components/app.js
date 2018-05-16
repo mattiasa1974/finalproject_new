@@ -185,6 +185,7 @@ handleNewHomeScore = (matchId, homeTeam, homeScore) => {
   const index = games.findIndex((game) => game.matchId === matchId)
   games[index].homeScore = homeScore
   this.setState({games: games})
+
   }
 
 handleNewAwayScore = (matchId, awayTeam, awayScore) => {
@@ -215,15 +216,7 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
         { this.state.games.map((gameData) => {
           if (gameData.group === groupIdFromUrl)
           {
-           return(
-           <Game game={gameData}
-             addHomeScore={this.handleNewHomeScore}
-             addAwayScore={this.handleNewAwayScore} />
-           )
-        // {/* <Game game={this.state.games[0]}
-        //  addHomeScore={this.handleNewHomeScore}
-        //  addAwayScore={this.handleNewAwayScore} /> */}
-
+           return <Game game={gameData} />
           console.log(gameData)
         }
       })}

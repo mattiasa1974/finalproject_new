@@ -18,7 +18,7 @@ class Game extends React.Component {
 
   handleChangeHomeScore = event => {
     this.setState({
-      newHomeScore: event.target.value
+      newHomeScore: event.target.value,
     })
     this.props.newHomeScore(this.props.game.matchId,
       this.props.game.homeTeam,
@@ -37,7 +37,7 @@ class Game extends React.Component {
   render() {
     const { game } = this.props
     // console.log('game: ', game)
-    console.log('this.props: ', this.props.game.homeTeam)
+    console.log('this.props: ', this.props)
 
     return (
       <div className="game-container">
@@ -50,7 +50,6 @@ class Game extends React.Component {
               score={game.homeScore} >
             </input> –
             <input
-              value={this.state.newAwayScore}
               onChange={this.handleChangeAwayScore}
               type="number"
               score={game.awayScore} >
