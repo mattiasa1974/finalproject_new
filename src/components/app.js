@@ -212,7 +212,10 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
         { this.state.games.map((gameData) => {
           if (gameData.group === groupIdFromUrl)
           {
-           return <Game game={gameData} />
+           return (<Game
+                  addHomeScore = {this.handleNewHomeScore}
+                  addAwayScore = {this.handleNewAwayScore}
+                  game={gameData} />)
           console.log(gameData)
         }
       })}
