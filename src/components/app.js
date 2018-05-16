@@ -189,8 +189,11 @@ handleNewHomeScore = (matchId, homeTeam, homeScore) => {
   }
 
 handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-  console.log(matchId, awayTeam, awayScore)
-  const newAwayScore = this.state.awayScore
+  // console.log(matchId, awayTeam, awayScore)
+  const games = this.state.games
+  const index = games.findIndex((game) => game.matchId === matchId)
+  games[index].awayScore = awayScore
+  // const newAwayScore = this.state.awayScore
   this.setState({ awayScore: awayScore})
 }
 
