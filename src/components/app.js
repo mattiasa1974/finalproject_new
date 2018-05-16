@@ -185,13 +185,16 @@ handleNewHomeScore = (matchId, homeTeam, homeScore) => {
   const index = games.findIndex((game) => game.matchId === matchId)
   games[index].homeScore = homeScore
   this.setState({games: games})
-
   }
 
 handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-  console.log(matchId, awayTeam, awayScore)
-  const newAwayScore = this.state.awayScore
-  this.setState({ awayScore: awayScore})
+  // console.log(matchId, awayTeam, awayScore)
+  // const newAwayScore = this.state.awayScore
+  // this.setState({ awayScore: awayScore})
+  const games = this.state.games
+  const index = games.findIndex((game) => game.matchId === matchId)
+  games[index].awayScore = awayScore
+  this.setState({games: games})
 }
 
 
@@ -212,7 +215,15 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
         { this.state.games.map((gameData) => {
           if (gameData.group === groupIdFromUrl)
           {
-           return <Game game={gameData} />
+           return(
+           <Game game={gameData}
+             addHomeScore={this.handleNewHomeScore}
+             addAwayScore={this.handleNewAwayScore} />
+           )
+        // {/* <Game game={this.state.games[0]}
+        //  addHomeScore={this.handleNewHomeScore}
+        //  addAwayScore={this.handleNewAwayScore} /> */}
+
           console.log(gameData)
         }
       })}
