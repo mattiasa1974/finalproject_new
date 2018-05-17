@@ -1,6 +1,6 @@
 
 
-const countries = ["Ryssland", "Sweden", "Germany"]
+const countries = ["Ryssland", "Egypten", "Uruguay"]
 
 export const calculateResult = (games) => {
   const result = countries.map((country) => {
@@ -15,8 +15,8 @@ export const calculateResult = (games) => {
     games.map((game) => {
       if (country === game.homeTeam) {
         playedGames += 1
-        totOwnScore += game.homeScore
-        totAgainstScore += game.awayScore
+        totOwnScore += parseInt(game.homeScore)
+        totAgainstScore += parseInt(game.awayScore)
           if (game.homeScore > game.awayScore) {
             points += 3
             wins += 1
@@ -29,8 +29,8 @@ export const calculateResult = (games) => {
           console.log(game.playedGames)
       } else if ( country === game.awayTeam ) {
           playedGames += 1
-          totOwnScore += game.awayScore
-          totAgainstScore += game.homeScore
+          totOwnScore += parseInt(game.awayScore)
+          totAgainstScore += parseInt(game.homeScore)
             if (game.awayScore > game.homeScore) {
               points += 3
               wins += 1

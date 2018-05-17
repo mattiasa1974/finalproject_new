@@ -17,8 +17,8 @@ class App extends React.Component {
         date: "14/6",
         homeTeam: "Ryssland",
         awayTeam: "Saudiarabien",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -26,8 +26,8 @@ class App extends React.Component {
         date: "15/6",
         homeTeam: "Egypten",
         awayTeam: "Uruguay",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -35,8 +35,8 @@ class App extends React.Component {
         date: "19/6",
         homeTeam: "Ryssland",
         awayTeam: "Egypten",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -44,8 +44,8 @@ class App extends React.Component {
         date: "20/6",
         homeTeam: "Uruguay",
         awayTeam: "Saudiarabien",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -53,8 +53,8 @@ class App extends React.Component {
         date: "25/6",
         homeTeam: "Uruguay",
         awayTeam: "Ryssland",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -62,8 +62,8 @@ class App extends React.Component {
         date: "25/6",
         homeTeam: "Saudiarabien",
         awayTeam: "Egypten",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "A"
       },
       {
@@ -71,8 +71,8 @@ class App extends React.Component {
         date: "15/6",
         homeTeam: "Marocko",
         awayTeam: "Iran",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "B"
       },
       {
@@ -80,8 +80,8 @@ class App extends React.Component {
         date: "15/6",
         homeTeam: "Portugal",
         awayTeam: "Spanien",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "B"
       },
       {
@@ -98,8 +98,8 @@ class App extends React.Component {
         date: "20/6",
         homeTeam: "Iran",
         awayTeam: "Spanien",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "B"
       },
       {
@@ -107,8 +107,8 @@ class App extends React.Component {
         date: "25/6",
         homeTeam: "Iran",
         awayTeam: "Portugal",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "B"
       },
       {
@@ -116,8 +116,8 @@ class App extends React.Component {
         date: "25/6",
         homeTeam: "Spanien",
         awayTeam: "Marocko",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 0,
+        awayScore: 0,
         group: "B"
       },
       {
@@ -125,8 +125,8 @@ class App extends React.Component {
       date: "16/6",
       homeTeam: "Frankrike",
       awayTeam: "Australien",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "C"
     },
     {
@@ -134,8 +134,8 @@ class App extends React.Component {
       date: "16/6",
       homeTeam: "Argentina",
       awayTeam: "Island",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "D"
     },
     {
@@ -143,8 +143,8 @@ class App extends React.Component {
       date: "17/6",
       homeTeam: "Costa Rica",
       awayTeam: "Serbien",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "E"
     },
     {
@@ -152,8 +152,8 @@ class App extends React.Component {
       date: "17/6",
       homeTeam: "Tyskland",
       awayTeam: "Mexiko",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "F"
     },
     {
@@ -161,8 +161,8 @@ class App extends React.Component {
       date: "18/6",
       homeTeam: "Belgien",
       awayTeam: "Panama",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "G"
     },
     {
@@ -170,8 +170,8 @@ class App extends React.Component {
       date: "19/6",
       homeTeam: "Colombia",
       awayTeam: "Japan",
-      homeScore: null,
-      awayScore: null,
+      homeScore: 0,
+      awayScore: 0,
       group: "H"
     },
     ]
