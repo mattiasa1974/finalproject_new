@@ -4,12 +4,18 @@ import Game from "./game"
 class Group extends React.Component {
 
   render() {
-
+console.log(this.props)
     return (
       <div>
-        <p>hello world</p>
-        <p>{this.props.groupmatches.group}</p>
-
+        { this.props.games.map((gameData) => {
+          if (gameData.group === this.props.match.params.groupId)
+          {
+           return (<Game
+                  addHomeScore = {this.props.addHomeScore}
+                  addAwayScore = {this.props.addAwayScore}
+                  game={gameData} />)
+        }
+      })}
       </div>
     )
 

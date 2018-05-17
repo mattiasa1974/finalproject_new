@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom"
 import Game from "./game"
 import Group from "./group"
 
@@ -211,21 +212,47 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
     const groupIdFromUrl = "C"
 
     return (
-      <div>
-        { this.state.games.map((gameData) => {
-          if (gameData.group === groupIdFromUrl)
-          {
-           return (<Game
-                  addHomeScore = {this.handleNewHomeScore}
-                  addAwayScore = {this.handleNewAwayScore}
-                  game={gameData} />)
-          console.log(gameData)
-        }
-      })}
-      </div>
+      <BrowserRouter>
+        <div>
+          <ul>
+            <li><Link to="/A">A</Link></li>
+            <li><Link to="/B">B</Link></li>
+            <li><Link to="/C">C</Link></li>
+            <li><Link to="/D">D</Link></li>
+            <li><Link to="/E">E</Link></li>
+            <li><Link to="/F">F</Link></li>
+            <li><Link to="/G">G</Link></li>
+            <li><Link to="/H">H</Link></li>
+          </ul>
+
+          <Route path="/:groupId"
+            render={(props) => (
+              <Group {...props}
+              addHomeScore = {this.handleNewHomeScore}
+              addAwayScore = {this.handleNewAwayScore}
+              games={this.state.games}
+              />
+            )}
+            />
+        </div>
+      </BrowserRouter>
+
     )
 
   }
 }
 
 export default App
+
+// <div>
+//   { this.state.games.map((gameData) => {
+//     if (gameData.group === groupIdFromUrl)
+//     {
+//      return (<Game
+//             addHomeScore = {this.handleNewHomeScore}
+//             addAwayScore = {this.handleNewAwayScore}
+//             game={gameData} />)
+//     console.log(gameData)
+//   }
+// })}
+// </div>
