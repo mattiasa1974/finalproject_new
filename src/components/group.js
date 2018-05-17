@@ -4,7 +4,7 @@ import Game from "./game"
 class Group extends React.Component {
 
   render() {
-console.log(this.props)
+// console.log(this.props)
     return (
       <div>
         { this.props.games.map((gameData) => {
