@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom"
-import Game from "./game"
 import Group from "./group"
+import { calculateResult } from "./calculateresult"
 
 class App extends React.Component {
 
@@ -196,6 +196,9 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
   games[index].awayScore = awayScore
   // const newAwayScore = this.state.awayScore
   this.setState({ awayScore: awayScore})
+
+  const table = calculateResult(this.state.games)
+  this.setState({ })
 }
 
 
@@ -231,6 +234,14 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
               addHomeScore = {this.handleNewHomeScore}
               addAwayScore = {this.handleNewAwayScore}
               games={this.state.games}
+              country={this.country}
+              playedGames={this.playedGames}
+              wins={this.wins}
+              draws={this.draws}
+              losts={this.losts}
+              totOwnScore={this.totOwnScore}
+              totAgainstScore={this.totAgainstScore}
+              points={this.points}
               />
             )}
             />

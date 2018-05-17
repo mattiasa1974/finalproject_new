@@ -55,6 +55,7 @@ class Game extends React.Component {
               score={game.awayScore} >
             </input>
         </label>
+        <p>{this.props.country}</p>
       </div>
     )
       }

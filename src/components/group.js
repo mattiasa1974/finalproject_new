@@ -13,7 +13,15 @@ console.log(this.props)
            return (<Game
                   addHomeScore = {this.props.addHomeScore}
                   addAwayScore = {this.props.addAwayScore}
-                  game={gameData} />)
+                  game={gameData}
+                  country={this.props.country}
+                  playedGames={this.props.playedGames}
+                  wins={this.props.wins}
+                  draws={this.props.draws}
+                  losts={this.props.losts}
+                  totOwnScore={this.props.totOwnScore}
+                  totAgainstScore={this.props.totAgainstScore}
+                  points={this.props.points} />)
         }
       })}
       </div>
