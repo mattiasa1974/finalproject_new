@@ -13,10 +13,11 @@ export const calculateResult = (games) => {
     let points = 0
 
     games.map((game) => {
-      if ((country === game.homeTeam) && (game.homeScore !== null)) {
-        playedGames += 1
-        totOwnScore += parseInt(game.homeScore)
-        totAgainstScore += parseInt(game.awayScore)
+      if ((game.awayScore !== null) && (game.homeScore !== null)) {
+        if (country === game.homeTeam) {
+          playedGames += 1
+          totOwnScore += parseInt(game.homeScore)
+          totAgainstScore += parseInt(game.awayScore)
           if (game.homeScore > game.awayScore){
             points += 3
             wins += 1
@@ -26,11 +27,10 @@ export const calculateResult = (games) => {
           } else {
             losts += 1
           }
-          console.log(game.playedGames)
-      } else if (( country === game.awayTeam ) && (game.awayScore !== null)) {
-          playedGames += 1
-          totOwnScore += parseInt(game.awayScore)
-          totAgainstScore += parseInt(game.homeScore)
+        } else if (country === game.awayTeam) {
+            playedGames += 1
+            totOwnScore += parseInt(game.awayScore)
+            totAgainstScore += parseInt(game.homeScore)
             if (game.awayScore > game.homeScore) {
               points += 3
               wins += 1
@@ -41,6 +41,8 @@ export const calculateResult = (games) => {
               losts += 1
             }
         }
+      }
+
       })
 
       return {country: country, playedGames: playedGames,

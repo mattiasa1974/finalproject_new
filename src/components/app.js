@@ -198,7 +198,8 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
   this.setState({ awayScore: awayScore})
 
   const table = calculateResult(this.state.games)
-  this.setState({ })
+  this.setState({ table: table })
+  console.log(table)
 }
 
 // handleScore = (matchId, awayTeam, awayScore,
