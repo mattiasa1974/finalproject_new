@@ -6,8 +6,8 @@ import "./game.css"
 class Game extends React.Component {
 
   state = {
-    newHomeScore: "",
-    newAwayScore: ""
+    newHomeScore: null,
+    newAwayScore: null
   }
 
 
@@ -20,7 +20,7 @@ class Game extends React.Component {
     this.setState({
       newHomeScore: event.target.value,
     })
-    this.props.addHomeScore(this.props.game.matchId,
+    this.props.addScore(this.props.game.matchId,
       this.props.game.homeTeam,
       event.target.value)
   }
@@ -29,7 +29,7 @@ class Game extends React.Component {
     this.setState({
       newAwayScore: event.target.value
     })
-    this.props.addAwayScore(this.props.game.matchId,
+    this.props.addScore(this.props.game.matchId,
       this.props.game.awayTeam,
       event.target.value)
   }
@@ -41,21 +41,28 @@ class Game extends React.Component {
 
     return (
       <div className="game-container">
+        <div>
+        <p>{this.props.game.date}</p>
         <p>{this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
-        <label>
-            <input
-              value={this.state.newHomeScore}
-              onChange={this.handleChangeHomeScore}
-              type="number"
-              score={game.homeScore} >
-            </input> –
-            <input
-              onChange={this.handleChangeAwayScore}
-              type="number"
-              score={game.awayScore} >
-            </input>
-        </label>
         <p>{this.props.country}</p>
+          <label>
+              <input
+                value={this.state.newHomeScore}
+                onChange={this.handleChangeHomeScore}
+                type="number"
+                score={game.homeScore} >
+              </input> –
+              <input
+                onChange={this.handleChangeAwayScore}
+                type="number"
+                score={game.awayScore} >
+              </input>
+          </label>
+        </div>
+        <div>
+          <p>hello</p>
+          <p>{this.props.country}</p>
+        </div>
       </div>
     )
       }
