@@ -13,7 +13,6 @@ class Group extends React.Component {
            return (<Game
                   addHomeScore = {this.props.addHomeScore}
                   addAwayScore = {this.props.addAwayScore}
-                  handleMatch = {this.props.handleMatch}
                   game={gameData}
                   country={this.props.country}
                   playedGames={this.props.playedGames}

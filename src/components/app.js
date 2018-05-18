@@ -19,8 +19,7 @@ class App extends React.Component {
         awayTeam: "Saudiarabien",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 2,
@@ -29,8 +28,7 @@ class App extends React.Component {
         awayTeam: "Uruguay",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 3,
@@ -39,8 +37,7 @@ class App extends React.Component {
         awayTeam: "Egypten",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 4,
@@ -49,8 +46,7 @@ class App extends React.Component {
         awayTeam: "Saudiarabien",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 5,
@@ -59,8 +55,7 @@ class App extends React.Component {
         awayTeam: "Ryssland",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 6,
@@ -69,8 +64,7 @@ class App extends React.Component {
         awayTeam: "Egypten",
         homeScore: null,
         awayScore: null,
-        group: "A",
-        played: false
+        group: "A"
       },
       {
         matchId: 7,
@@ -79,8 +73,7 @@ class App extends React.Component {
         awayTeam: "Iran",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
         matchId: 8,
@@ -89,8 +82,7 @@ class App extends React.Component {
         awayTeam: "Spanien",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
         matchId: 9,
@@ -99,8 +91,7 @@ class App extends React.Component {
         awayTeam: "Marocko",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
         matchId: 10,
@@ -109,8 +100,7 @@ class App extends React.Component {
         awayTeam: "Spanien",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
         matchId: 11,
@@ -119,8 +109,7 @@ class App extends React.Component {
         awayTeam: "Portugal",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
         matchId: 12,
@@ -129,8 +118,7 @@ class App extends React.Component {
         awayTeam: "Marocko",
         homeScore: null,
         awayScore: null,
-        group: "B",
-        played: false
+        group: "B"
       },
       {
       matchId: 13,
@@ -139,8 +127,7 @@ class App extends React.Component {
       awayTeam: "Australien",
       homeScore: null,
       awayScore: null,
-      group: "C",
-      played: false
+      group: "C"
     },
     {
       matchId: 19,
@@ -149,8 +136,7 @@ class App extends React.Component {
       awayTeam: "Island",
       homeScore: null,
       awayScore: null,
-      group: "D",
-      played: false
+      group: "D"
     },
     {
       matchId: 25,
@@ -159,8 +145,7 @@ class App extends React.Component {
       awayTeam: "Serbien",
       homeScore: null,
       awayScore: null,
-      group: "E",
-      played: false
+      group: "E"
     },
     {
       matchId: 31,
@@ -169,8 +154,7 @@ class App extends React.Component {
       awayTeam: "Mexiko",
       homeScore: null,
       awayScore: null,
-      group: "F",
-      played: false
+      group: "F"
     },
     {
       matchId: 37,
@@ -179,8 +163,7 @@ class App extends React.Component {
       awayTeam: "Panama",
       homeScore: null,
       awayScore: null,
-      group: "G",
-      played: false
+      group: "G"
     },
     {
       matchId: 43,
@@ -189,8 +172,7 @@ class App extends React.Component {
       awayTeam: "Japan",
       homeScore: null,
       awayScore: null,
-      group: "H",
-      played: false
+      group: "H"
     },
     ]
   }
@@ -218,15 +200,6 @@ handleNewAwayScore = (matchId, awayTeam, awayScore) => {
   const table = calculateResult(this.state.games)
   this.setState({ })
 }
-
-handleMatch = (matchId, played) => {
-  const games = this.state.games
-  const index = games.findIndex((game) => game.matchId === matchId)
-  this.played = !this.played
-  console.log(this.state)
-  this.setState({played: played})
-}
-
 
 
 // const groupA = this.props.games.filter((game) => {
@@ -259,7 +232,6 @@ handleMatch = (matchId, played) => {
               <Group {...props}
               addHomeScore = {this.handleNewHomeScore}
               addAwayScore = {this.handleNewAwayScore}
-              handleMatch = {this.handleMatch}
               games={this.state.games}
               country={this.country}
               playedGames={this.playedGames}
