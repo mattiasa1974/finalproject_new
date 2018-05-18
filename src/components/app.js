@@ -178,43 +178,43 @@ class App extends React.Component {
   }
 }
 
-// handleNewHomeScore = (matchId, homeTeam, homeScore) => {
-//   // console.log(matchId, homeTeam, homeScore)
-//   // const newHomeScore = this.state.newhomeScore
-//   // this.setState({ homeScore: homeScore})
-//   const games = this.state.games
-//   const index = games.findIndex((game) => game.matchId === matchId)
-//   games[index].homeScore = homeScore
-//   this.setState({games: games})
-//
-//   }
+handleNewHomeScore = (matchId, homeTeam, homeScore) => {
+  // console.log(matchId, homeTeam, homeScore)
+  // const newHomeScore = this.state.newhomeScore
+  // this.setState({ homeScore: homeScore})
+  const games = this.state.games
+  const index = games.findIndex((game) => game.matchId === matchId)
+  games[index].homeScore = homeScore
+  this.setState({games: games})
 
-// handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-//   // console.log(matchId, awayTeam, awayScore)
-//   const games = this.state.games
-//   const index = games.findIndex((game) => game.matchId === matchId)
-//   games[index].awayScore = awayScore
-//   // const newAwayScore = this.state.awayScore
-//   this.setState({ awayScore: awayScore})
-//
-//   const table = calculateResult(this.state.games)
-//   this.setState({ })
-// }
+  }
 
-handleScore = (matchId, awayTeam, awayScore,
-  homeTeam, homeScore) => {
+handleNewAwayScore = (matchId, awayTeam, awayScore) => {
   // console.log(matchId, awayTeam, awayScore)
   const games = this.state.games
   const index = games.findIndex((game) => game.matchId === matchId)
   games[index].awayScore = awayScore
-  games[index].homeScore = homeScore
-
   // const newAwayScore = this.state.awayScore
-  this.setState({ games: games })
+  this.setState({ awayScore: awayScore})
 
   const table = calculateResult(this.state.games)
   this.setState({ })
 }
+
+// handleScore = (matchId, awayTeam, awayScore,
+//   homeTeam, homeScore) => {
+//   // console.log(matchId, awayTeam, awayScore)
+//   const games = this.state.games
+//   const index = games.findIndex((game) => game.matchId === matchId)
+//   games[index].awayScore = awayScore
+//   games[index].homeScore = homeScore
+//
+//   // const newAwayScore = this.state.awayScore
+//   this.setState({ games: games })
+//
+//   const table = calculateResult(this.state.games)
+//   this.setState({ })
+// }
 
 
 // const groupA = this.props.games.filter((game) => {
@@ -245,7 +245,8 @@ handleScore = (matchId, awayTeam, awayScore,
           <Route path="/:groupId"
             render={(props) => (
               <Group {...props}
-              addScore = {this.handleScore}
+              addAwayScore = {this.handleNewAwayScore}
+              addHomeScore = {this.handleNewHomeScore}
               games={this.state.games}
               country={this.country}
               playedGames={this.playedGames}

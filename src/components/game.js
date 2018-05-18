@@ -20,7 +20,7 @@ class Game extends React.Component {
     this.setState({
       newHomeScore: event.target.value,
     })
-    this.props.addScore(this.props.game.matchId,
+    this.props.addHomeScore(this.props.game.matchId,
       this.props.game.homeTeam,
       event.target.value)
   }
@@ -29,14 +29,14 @@ class Game extends React.Component {
     this.setState({
       newAwayScore: event.target.value
     })
-    this.props.addScore(this.props.game.matchId,
+    this.props.addAwayScore(this.props.game.matchId,
       this.props.game.awayTeam,
       event.target.value)
   }
 
   render() {
     const { game } = this.props
-    // console.log('game: ', game)
+    console.log('game: ', game)
     //console.log('this.props: ', this.props)
 
     return (
