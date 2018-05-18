@@ -186,7 +186,7 @@ class App extends React.Component {
 //   const index = games.findIndex((game) => game.matchId === matchId)
 //   games[index].homeScore = homeScore
 //   this.setState({games: games})
-//
+// //
 //   }
 
 // handleNewAwayScore = (matchId, awayTeam, awayScore) => {
