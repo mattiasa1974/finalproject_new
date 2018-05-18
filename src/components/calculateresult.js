@@ -11,9 +11,11 @@ export const calculateResult = (games) => {
     let totOwnScore = 0
     let totAgainstScore = 0
     let points = 0
+    let group = ""
 
     games.map((game) => {
       if ((game.awayScore !== null) && (game.homeScore !== null)) {
+        group = game.group
         if (country === game.homeTeam) {
           playedGames += 1
           totOwnScore += parseInt(game.homeScore)
@@ -48,7 +50,7 @@ export const calculateResult = (games) => {
       return {country: country, playedGames: playedGames,
         wins: wins, draws: draws, losts: losts,
         totOwnScore: totOwnScore, totAgainstScore: totAgainstScore,
-        points: points}
+        points: points, group: group}
 
     })
   console.log(result)

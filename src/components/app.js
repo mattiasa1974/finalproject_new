@@ -9,8 +9,20 @@ class App extends React.Component {
     super(props)
 
     this.state =
+    {
+    table: [
       {
-
+        group: "A",
+        country: "Ryssland",
+        playedGames: "0",
+        wins: "0",
+        draws: "0",
+        losts: "0",
+        totOwnScore: "0",
+        totAgainstScore: "0",
+        points: "0"
+      }
+    ],
     games:[
       {
         matchId: 1,
@@ -176,6 +188,7 @@ class App extends React.Component {
     },
     ]
   }
+
 }
 
 // handleNewHomeScore = (matchId, homeTeam, homeScore) => {
@@ -202,6 +215,7 @@ class App extends React.Component {
 //   console.log(table)
 // }
 
+
 handleScore = (matchId, awayTeam, awayScore,
   homeTeam, homeScore) => {
   // console.log(matchId, awayTeam, awayScore)
@@ -214,15 +228,21 @@ handleScore = (matchId, awayTeam, awayScore,
   this.setState({ games: games })
 
   const table = calculateResult(this.state.games)
-  this.setState({ table: table})
+
+  this.setState({ table: table })
+  console.log(table)
+
 }
 
+// const table = calculateResult(this.state.games)
 
 // const groupA = this.props.games.filter((game) => {
 //   return game.group === "A"
 // })
 //
 // const first = this.state.games[0]
+
+
 
 
   render() {
@@ -256,7 +276,7 @@ handleScore = (matchId, awayTeam, awayScore,
               totOwnScore={this.totOwnScore}
               totAgainstScore={this.totAgainstScore}
               points={this.points}
-              />
+              table={this.state.table}/>
             )}
             />
         </div>
