@@ -34,6 +34,11 @@ class Game extends React.Component {
       event.target.value)
   }
 
+  handleResultRegistration = event => {
+    this.props.handleMatch(this.props.game.matchId,
+      this.props.game.played)
+  }
+
   render() {
     const { game } = this.props
     // console.log('game: ', game)
@@ -54,6 +59,9 @@ class Game extends React.Component {
               type="number"
               score={game.awayScore} >
             </input>
+            <input
+              type="checkbox"
+              onChange={this.handleResultRegistration} />
         </label>
         <p>{this.props.country}</p>
       </div>
