@@ -191,7 +191,7 @@ class App extends React.Component {
 
 }
 
-// handleNewHomeScore = (matchId, homeTeam, homeScore) => {
+/// handleNewHomeScore = (matchId, homeTeam, homeScore) => {
 //   // console.log(matchId, homeTeam, homeScore)
 //   // const newHomeScore = this.state.newhomeScore
 //   // this.setState({ homeScore: homeScore})
