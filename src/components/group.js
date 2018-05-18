@@ -11,8 +11,7 @@ class Group extends React.Component {
           if (gameData.group === this.props.match.params.groupId)
           {
            return (<Game
-                  addHomeScore = {this.props.addHomeScore}
-                  addAwayScore = {this.props.addAwayScore}
+                  addScore = {this.props.addScore}
                   game={gameData}
                   country={this.props.country}
                   playedGames={this.props.playedGames}
