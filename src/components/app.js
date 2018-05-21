@@ -234,7 +234,7 @@ handleScore = (matchId, awayTeam, awayScore,
   console.log(table)
 
   const unsortedTable = table
-  const sortedTable = unsortedTable.sort((a,b) => (a.points < b.points) || (a.diffScore < b.diffScore) );
+  const sortedTable = unsortedTable.sort((a,b) => (a.group < b.group) || (a.diffScore < b.diffScore) || (a.points < b.points) );
   console.log(sortedTable);
 
   this.setState({ table: table })
