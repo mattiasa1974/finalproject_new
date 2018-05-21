@@ -230,9 +230,14 @@ handleScore = (matchId, awayTeam, awayScore,
   this.setState({ games: games })
 
   const table = calculateResult(this.state.games)
+  console.log(table)
+
+  const unsortedTable = table
+  const sortedTable = unsortedTable.sort((a,b) => a.points < b.points);
+  console.log(sortedTable);
 
   this.setState({ table: table })
-  console.log(table)
+
 
 }
 
