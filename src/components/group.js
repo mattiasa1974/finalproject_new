@@ -1,5 +1,6 @@
 import React from "react"
 import Game from "./game"
+import "./group.css"
 
 
 class Group extends React.Component {
@@ -26,21 +27,21 @@ class Group extends React.Component {
           }
         })}
         </div>
-        <div>
+        <div className="table-container">
           { this.props.table.map((tableData) => {
             if (tableData.group === this.props.match.params.groupId)
             {
              return (
-                    <div>
-                      <div>{tableData.country}</div>
-                      <div>{tableData.playedGames}</div>
-                      <div>{tableData.wins}</div>
-                      <div>{tableData.draws}</div>
-                      <div>{tableData.losts}</div>
-                      <div>{tableData.totOwnScore}</div>
+                    <div className="table-row">
+                      <div className="table-item country">{tableData.country}</div>
+                      <div className="table-item">{tableData.playedGames}</div>
+                      <div className="table-item">{tableData.wins}</div>
+                      <div className="table-item">{tableData.draws}</div>
+                      <div className="table-item">{tableData.losts}</div>
+                      <div className="table-item">{tableData.totOwnScore}</div>
                       <div>–</div>
-                      <div>{tableData.totAgainstScore}</div>
-                      <div>{tableData.points}</div>
+                      <div className="table-item">{tableData.totAgainstScore}</div>
+                      <div className="table-item">{tableData.points}</div>
                     </div>
                   )
                     // country={this.props.country}

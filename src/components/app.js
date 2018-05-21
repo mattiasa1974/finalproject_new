@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom"
 import Group from "./group"
 import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
+import "./group.css"
 
 class App extends React.Component {
 
