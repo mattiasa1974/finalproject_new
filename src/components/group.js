@@ -30,6 +30,7 @@ class Group extends React.Component {
         <div className="table-container">
           { this.props.table.map((tableData) => {
             console.log(tableData.group)
+            console.log(this.props.match.params.groupId)
             if (tableData.group === this.props.match.params.groupId)
             {
              return (
@@ -43,7 +44,7 @@ class Group extends React.Component {
                       <div>–</div>
                       <div className="table-item">{tableData.totAgainstScore}</div>
                       <div className="table-item">{tableData.points}</div>
-                      <div className="table-item">{tableData.group}</div> 
+                      <div className="table-item">{tableData.group}</div>
                     </div>
                   )
                     // country={this.props.country}
