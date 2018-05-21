@@ -1,6 +1,8 @@
 
 
-const countries = ["Ryssland", "Egypten", "Uruguay", "Saudiarabien", "Marocko", "Iran", "Portugal", "Spanien"]
+const countries = ["Ryssland", "Egypten",
+"Uruguay", "Saudiarabien", "Marocko",
+"Iran", "Portugal", "Spanien"]
 
 export const calculateResult = (games) => {
   const result = countries.map((country) => {
