@@ -45,6 +45,7 @@ class Group extends React.Component {
                       <div className="table-item">{tableData.totAgainstScore}</div>
                       <div className="table-item">{tableData.points}</div>
                       <div className="table-item">{tableData.group}</div>
+                      <div className="table-item">{tableData.diffScore}</div>
                     </div>
                   )
                     // country={this.props.country}

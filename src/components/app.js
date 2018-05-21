@@ -22,6 +22,7 @@ class App extends React.Component {
         losts: "0",
         totOwnScore: "0",
         totAgainstScore: "0",
+        diffScore: "0",
         points: "0"
       }
     ],
@@ -282,6 +283,7 @@ handleScore = (matchId, awayTeam, awayScore,
               losts={this.losts}
               totOwnScore={this.totOwnScore}
               totAgainstScore={this.totAgainstScore}
+              diffScore={this.diffScore}
               points={this.points}
               table={this.state.table}/>
             )}

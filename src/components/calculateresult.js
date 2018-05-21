@@ -13,6 +13,7 @@ export const calculateResult = (games) => {
     let losts = 0
     let totOwnScore = 0
     let totAgainstScore = 0
+    let diffScore = 0
     let points = 0
     let group = ""
 
@@ -23,6 +24,7 @@ export const calculateResult = (games) => {
           playedGames += 1
           totOwnScore += parseInt(game.homeScore)
           totAgainstScore += parseInt(game.awayScore)
+          diffScore = (totOwnScore - totAgainstScore)
           if (game.homeScore > game.awayScore){
             points += 3
             wins += 1
@@ -37,6 +39,7 @@ export const calculateResult = (games) => {
             playedGames += 1
             totOwnScore += parseInt(game.awayScore)
             totAgainstScore += parseInt(game.homeScore)
+            diffScore = (totOwnScore - totAgainstScore)
             if (game.awayScore > game.homeScore) {
               points += 3
               wins += 1
@@ -54,7 +57,7 @@ export const calculateResult = (games) => {
       return {country: country, playedGames: playedGames,
         wins: wins, draws: draws, losts: losts,
         totOwnScore: totOwnScore, totAgainstScore: totAgainstScore,
-        points: points, group: group}
+        points: points, group: group, diffScore: diffScore}
 
     })
   console.log(result)
