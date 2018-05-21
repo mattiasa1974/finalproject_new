@@ -306,11 +306,11 @@ handleScore = (matchId, awayTeam, awayScore,
   console.log(table)
 
   const unsortedTable = table
-  const sortedTable = unsortedTable.sort((a,b) => (a.group < b.group) || (a.diffScore < b.diffScore) || (a.points < b.points) );
-  console.log(sortedTable);
+  const sortedTable = unsortedTable.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  );
+  const sortedTables = sortedTable.sort((a, b) => (a.group > b.group))
+  console.log(sortedTables)
 
-  this.setState({ table: table })
-
+  this.setState({ table: sortedTables })
 
 }
 
@@ -330,6 +330,7 @@ handleScore = (matchId, awayTeam, awayScore,
     const groupIdFromUrl = "C"
 
     return (
+      <div>
       <BrowserRouter>
         <div>
           <ul className="grouprow">
@@ -362,6 +363,10 @@ handleScore = (matchId, awayTeam, awayScore,
             />
         </div>
       </BrowserRouter>
+        <div>
+          <h1>hej</h1>
+        </div>
+      </div>
 
     )
 
