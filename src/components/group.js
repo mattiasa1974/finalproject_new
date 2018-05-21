@@ -1,6 +1,7 @@
 import React from "react"
 import Game from "./game"
 
+
 class Group extends React.Component {
 
   render() {

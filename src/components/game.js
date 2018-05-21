@@ -3,6 +3,7 @@ import "./game.css"
 
 
 
+
 class Game extends React.Component {
 
   state = {
@@ -50,28 +51,29 @@ class Game extends React.Component {
     //console.log('this.props: ', this.props)
 
     return (
-      <div className="game-container">
-        <div>
-        <p>{this.props.game.date}</p>
-        <p>{this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
-        <p>{this.props.country}</p>
-          <label>
-              <input
-                value={this.state.newHomeScore}
-                onChange={this.handleChangeHomeScore}
-                type="number"
-                score={game.homeScore} >
-              </input> –
-              <input
-                onChange={this.handleChangeAwayScore}
-                type="number"
-                score={game.awayScore} >
-              </input>
-          </label>
-        </div>
-        <div>
-          <p>hello</p>
-          <p>{this.props.country}</p>
+      <div>
+        <div className="game-container">
+          <div className="date">
+            <p >{this.props.game.date}</p>
+          </div>
+          <div className="match">
+            <p > {this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
+          </div>
+          <div className="inputfields">
+            <label>
+                <input
+                  value={this.state.newHomeScore}
+                  onChange={this.handleChangeHomeScore}
+                  type="number"
+                  score={game.homeScore} >
+                </input> –
+                <input
+                  onChange={this.handleChangeAwayScore}
+                  type="number"
+                  score={game.awayScore} >
+                </input>
+            </label>
+          </div>
         </div>
       </div>
     )

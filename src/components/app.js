@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom"
 import Group from "./group"
 import { calculateResult } from "./calculateresult"
+import "./groupnavigationcomponent.css"
 
 class App extends React.Component {
 
@@ -252,15 +253,15 @@ handleScore = (matchId, awayTeam, awayScore,
     return (
       <BrowserRouter>
         <div>
-          <ul>
-            <li><Link to="/A">A</Link></li>
-            <li><Link to="/B">B</Link></li>
-            <li><Link to="/C">C</Link></li>
-            <li><Link to="/D">D</Link></li>
-            <li><Link to="/E">E</Link></li>
-            <li><Link to="/F">F</Link></li>
-            <li><Link to="/G">G</Link></li>
-            <li><Link to="/H">H</Link></li>
+          <ul className="grouprow">
+            <li><Link to="/A" className="groupbox">A</Link></li>
+            <li><Link to="/B" className="groupbox">B</Link></li>
+            <li><Link to="/C" className="groupbox">C</Link></li>
+            <li><Link to="/D" className="groupbox">D</Link></li>
+            <li><Link to="/E" className="groupbox">E</Link></li>
+            <li><Link to="/F" className="groupbox">F</Link></li>
+            <li><Link to="/G" className="groupbox">G</Link></li>
+            <li><Link to="/H" className="groupbox">H</Link></li>
           </ul>
 
           <Route path="/:groupId"
