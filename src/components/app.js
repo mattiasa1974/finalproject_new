@@ -299,7 +299,7 @@ handleScore = (matchId, awayTeam, awayScore,
 export default App
 
 // <div>
-//   { this.state.games.map((gameData) => {
+//   {  this.state.games.map((gameData) => {
 //     if (gameData.group === groupIdFromUrl)
 //     {
 //      return (<Game
