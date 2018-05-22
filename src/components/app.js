@@ -322,14 +322,11 @@ handleScore = (matchId, awayTeam, awayScore,
    // const sortedTables =   )
    console.log(sorted)
 
-  
-      console.log(groups.A[0].country)
+      // console.log(groups.A[0].country)
+      // let A1 = groups.A[0].country
 
 
-
-
-
-
+    this.setState({groups: groups})
 
   })
 
