@@ -3,7 +3,11 @@
 const countries = ["Ryssland", "Egypten",
 "Uruguay", "Saudiarabien", "Marocko",
 "Iran", "Portugal", "Spanien",
-"Frankrike", "Australien"]
+"Frankrike", "Australien", "Argentina",
+"Island", "Costa Rica", "Serbien",
+"Tyskland", "Mexiko", "Belgien",
+"Panama", "Colombia",
+ "Japan" ]
 
 export const calculateResult = (games) => {
   const result = countries.map((country) => {
@@ -13,34 +17,21 @@ export const calculateResult = (games) => {
     let losts = 0
     let totOwnScore = 0
     let totAgainstScore = 0
-    let diffScore = 0
     let points = 0
     let group = ""
+    let diffScore = 0
 
     games.map((game) => {
-      if ((game.awayScore !== null) && (game.homeScore !== null)) {
-        if (country === game.homeTeam) {
-          group = game.group
-          playedGames += 1
-          totOwnScore += parseInt(game.homeScore)
-          totAgainstScore += parseInt(game.awayScore)
-          diffScore = (totOwnScore - totAgainstScore)
-          if (game.homeScore > game.awayScore){
-            points += 3
-            wins += 1
-          } else if (game.homeScore === game.awayScore) {
-            points += 1
-            draws += 1
-          } else {
-            losts += 1
-          }
-        } else if (country === game.awayTeam) {
-          group = game.group
+      if ((country === game.homeTeam) || (country === game.awayTeam)) {
+        group = game.group
+        if ((game.awayScore !== null) && (game.homeScore !== null)) {
+
+          if (country === game.homeTeam) {
             playedGames += 1
-            totOwnScore += parseInt(game.awayScore)
-            totAgainstScore += parseInt(game.homeScore)
+            totOwnScore += parseInt(game.homeScore)
+            totAgainstScore += parseInt(game.awayScore)
             diffScore = (totOwnScore - totAgainstScore)
-            if (game.awayScore > game.homeScore) {
+            if (game.homeScore > game.awayScore){
               points += 3
               wins += 1
             } else if (game.homeScore === game.awayScore) {
@@ -49,15 +40,35 @@ export const calculateResult = (games) => {
             } else {
               losts += 1
             }
+          } else if (country === game.awayTeam) {
+
+
+              playedGames += 1
+              totOwnScore += parseInt(game.awayScore)
+              totAgainstScore += parseInt(game.homeScore)
+              diffScore = (totOwnScore - totAgainstScore)
+              if (game.awayScore > game.homeScore) {
+                points += 3
+                wins += 1
+              } else if (game.homeScore === game.awayScore) {
+                points += 1
+                draws += 1
+              } else {
+                losts += 1
+              }
         }
+      } else {
       }
+    } else {
+
+    }
 
       })
 
-      return {country: country, playedGames: playedGames,
+      return { group: group, country: country, playedGames: playedGames,
         wins: wins, draws: draws, losts: losts,
         totOwnScore: totOwnScore, totAgainstScore: totAgainstScore,
-        points: points, group: group, diffScore: diffScore}
+        diffScore: diffScore, points: points }
 
     })
   console.log(result)
