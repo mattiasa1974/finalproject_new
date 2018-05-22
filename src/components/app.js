@@ -266,29 +266,7 @@ class App extends React.Component {
 
 }
 
-/// handleNewHomeScore = (matchId, homeTeam, homeScore) => {
-//   // console.log(matchId, homeTeam, homeScore)
-//   // const newHomeScore = this.state.newhomeScore
-//   // this.setState({ homeScore: homeScore})
-//   const games = this.state.games
-//   const index = games.findIndex((game) => game.matchId === matchId)
-//   games[index].homeScore = homeScore
-//   this.setState({games: games})
-// //
-//   }
 
-// handleNewAwayScore = (matchId, awayTeam, awayScore) => {
-//   // console.log(matchId, awayTeam, awayScore)
-//   const games = this.state.games
-//   const index = games.findIndex((game) => game.matchId === matchId)
-//   games[index].awayScore = awayScore
-//   // const newAwayScore = this.state.awayScore
-//   this.setState({ awayScore: awayScore})
-//
-//   const table = calculateResult(this.state.games)
-//   this.setState({ table: table })
-//   console.log(table)
-// }
 
 
 handleScore = (matchId, awayTeam, awayScore,
@@ -303,14 +281,28 @@ handleScore = (matchId, awayTeam, awayScore,
   this.setState({ games: games })
 
   const table = calculateResult(this.state.games)
-  console.log(table)
+  //console.log(table)
 
   const unsortedTable = table
   const sortedTable = unsortedTable.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  );
-  const sortedTables = sortedTable.sort((a, b) => (a.group > b.group))
-  console.log(sortedTables)
+  //console.log(sortedTable)
 
-  this.setState({ table: sortedTables })
+  this.setState({ table: sortedTable })
+
+  let groups = {
+    A: [],
+    B: [],
+    C: [],
+    D: [],
+    E: [],
+    F: [],
+    G: [],
+    H: []
+  }
+
+  console.log('table: ',table)
+
+
 
 }
 
