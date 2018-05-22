@@ -300,7 +300,14 @@ handleScore = (matchId, awayTeam, awayScore,
     H: []
   }
 
-  console.log('table: ',table)
+  // console.log('table: ',table)
+
+  table.forEach(country => {
+    console.log('group: ', groups[country.group])
+    groups[country.group].push(country)
+   }
+  )
+
 
 
 
