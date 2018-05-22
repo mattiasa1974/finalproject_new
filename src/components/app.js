@@ -322,6 +322,9 @@ handleScore = (matchId, awayTeam, awayScore,
    // const sortedTables =   )
    console.log(sorted)
 
+  
+      console.log(groups.A[0].country)
+
 
 
 
