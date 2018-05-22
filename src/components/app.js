@@ -321,12 +321,18 @@ handleScore = (matchId, awayTeam, awayScore,
    // console.log(groups[key])
    const sortedTables = sorted.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  )
    console.log(sortedTables)
+
+  // [1] -> 2nd team per group
+   var tableX = sortedTables[1].country
+
+   console.log(tableX)
+
+
+
+
+
+
   })
-
-
-
-
-
 
 }
 
