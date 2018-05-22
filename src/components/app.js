@@ -309,6 +309,22 @@ handleScore = (matchId, awayTeam, awayScore,
   )
 
 
+  // groups = [A:[], B:[]]
+
+
+  // [A, B]
+  Object.keys(groups).forEach(key => {
+
+   const unsorted = groups[key]
+   const sorted = unsorted.sort()
+   groups[key] = sorted
+   console.log(groups[key])
+
+  })
+
+  
+
+
 
 
 }
