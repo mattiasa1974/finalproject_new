@@ -318,25 +318,17 @@ handleScore = (matchId, awayTeam, awayScore,
    const unsorted = groups[key]
    const sorted = unsorted.sort()
    groups[key] = sorted
-   console.log(groups[key])
-
+   // console.log(groups[key])
+   const sortedTables = sorted.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  )
+   console.log(sortedTables)
   })
 
-  
+
 
 
 
 
 }
-
-// const table = calculateResult(this.state.games)
-
-// const groupA = this.props.games.filter((game) => {
-//   return game.group === "A"
-// })
-//
-// const first = this.state.games[0]
-
 
 
 
@@ -389,16 +381,3 @@ handleScore = (matchId, awayTeam, awayScore,
 }
 
 export default App
-
-// <div>
-//   {  this.state.games.map((gameData) => {
-//     if (gameData.group === groupIdFromUrl)
-//     {
-//      return (<Game
-//             addHomeScore = {this.handleNewHomeScore}
-//             addAwayScore = {this.handleNewAwayScore}
-//             game={gameData} />)
-//     console.log(gameData)
-//   }
-// })}
-// </div>
