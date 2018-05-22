@@ -4,6 +4,7 @@ import Group from "./group"
 import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
 import "./group.css"
+import Final18 from "./final18"
 
 class App extends React.Component {
 
@@ -373,7 +374,9 @@ handleScore = (matchId, awayTeam, awayScore,
         </div>
       </BrowserRouter>
         <div>
-          <h1>hej</h1>
+          <Final18
+          groups={this.state.groups}
+          />
         </div>
       </div>
 
