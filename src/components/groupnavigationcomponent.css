@@ -23,21 +23,25 @@ time, mark, audio, video {
 * {
   box-sizing: border-box;
 }
+body {
+	background-color: #fdd5db;
+}
 
 .grouprow {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	/* margin-top: 30px; */
+	/* margin-bottom: 30px; */
+	line-height: 75px;
 
 }
 
 .groupbox {
-  width: 50px;
+  width: 20%;
   height: 50px;
-  margin: 10px;
-  padding: 10px;
+  margin: 2px;
+  padding: 5px;
   font-size: 30px;
   text-align: center;
   color: black;
@@ -49,30 +53,121 @@ ul {
 	list-style-type: none;
 }
 
-
+.gamebox {
+	padding-left: 5px;
+	padding-right: 5px;
+}
 
 .game-container {
 	display: flex;
 	flex-direction: row;
 	margin-top: 10px;
+	background-color: #ffe6e6;
+}
+
+.game-container tr:nth-child {
+	background: lightgrey;
 }
 
 .groupbox:hover {
-	background-color: lightgrey;
+	background-color: #ffe6e6;
 }
 
 .groupbox:focus {
-	background-color: grey;
+	background-color: pink;
 }
 
 .date {
-	width: 10%;
+	width: 13%;
+	margin-left: 20px;
+	margin-top: 10px;
+	font-size: 15px;
+	/* margin-top: 10px; */
 }
 
 .match {
-  width: 40%;
+  width: 100%;
+	font-size: 17px;
+	font-family: verdana;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+.time {
+	font-size: 15px;
+	color: #666666;
+	margin-left: 10px;
+	margin-top: 10px;
+	/* margin-top: 10px; */
+	width: 50%;
+}
+
+.tips {
+	width: 30%;
+	font-size: 15px;
+	color: #666666;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 5px;
 }
 
 .inputfields {
-	width: 35%;
+	width: 60%;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.input {
+	width: 20%;
+}
+
+.table-container {
+  padding: 0px;
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+.table-item {
+	padding: 5px;
+}
+
+.table-headline {
+  width: 100%;
+	/* background-color: #a11014;
+	color: white; */
+	font-size: 15px;
+	margin-left: 10px;
+	padding-left: 10px;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.table-headline p span {
+	background-color: #a11014;
+	color: white;
+	padding: 2px;
+}
+
+.header-headline h1 {
+	font-size: 35px;
+	font-family: verdana;
+	text-align: center;
+}
+
+.header-headline h3 {
+	font-size: 18px;
+	font-family: verdana;
+	text-align: center;
+}
+
+.groupstage-headline p {
+	background-color: #a11014;
+	color: white;
+	padding: 2px;
+	font-size: 18px;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-transform: uppercase;
 }

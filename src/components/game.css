@@ -1,6 +1,6 @@
 input {
-  margin: 10px 30px;
-  width: 30px;
+  /* margin: 10px 30px; */
+  /* width: 30px; */
   text-align: center;
 }
 
@@ -17,11 +17,13 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .game-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: 15px;
+  margin-left: 20px;
 }

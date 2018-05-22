@@ -35,7 +35,9 @@ class App extends React.Component {
         awayTeam: "Saudiarabien",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "17.00",
+        channel: "TV4"
       },
       {
         matchId: 2,
@@ -44,7 +46,9 @@ class App extends React.Component {
         awayTeam: "Uruguay",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "14.00",
+        channel: "TV4"
       },
       {
         matchId: 3,
@@ -53,7 +57,9 @@ class App extends React.Component {
         awayTeam: "Egypten",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "20.00",
+        channel: "SVT"
       },
       {
         matchId: 4,
@@ -62,7 +68,9 @@ class App extends React.Component {
         awayTeam: "Saudiarabien",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "17.00",
+        channel: "TV4"
       },
       {
         matchId: 5,
@@ -71,7 +79,9 @@ class App extends React.Component {
         awayTeam: "Ryssland",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "16.00",
+        channel: "TV4"
       },
       {
         matchId: 6,
@@ -80,7 +90,9 @@ class App extends React.Component {
         awayTeam: "Egypten",
         homeScore: null,
         awayScore: null,
-        group: "A"
+        group: "A",
+        time: "16.00",
+        channel: "TV4"
       },
       {
         matchId: 7,
@@ -341,6 +353,13 @@ handleScore = (matchId, awayTeam, awayScore,
 
     return (
       <div>
+        <div className="header-headline">
+          <h1>Vilka vinner VM – du avgör!</h1>
+          <h3>Tippa hela mästerskapet</h3>
+        </div>
+        <div className="groupstage-headline">
+          <p>Gruppspel</p>
+        </div>
       <BrowserRouter>
         <div>
           <ul className="grouprow">
@@ -360,6 +379,7 @@ handleScore = (matchId, awayTeam, awayScore,
               addScore = {this.handleScore}
               games={this.state.games}
               country={this.country}
+              time={this.time}
               playedGames={this.playedGames}
               wins={this.wins}
               draws={this.draws}

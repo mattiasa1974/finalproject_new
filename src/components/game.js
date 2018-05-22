@@ -51,23 +51,29 @@ class Game extends React.Component {
     //console.log('this.props: ', this.props)
 
     return (
-      <div>
+      <div className="gamebox">
         <div className="game-container">
           <div className="date">
-            <p >{this.props.game.date}</p>
+            <p>{this.props.game.date}</p>
+          </div>
+          <div className="time">
+            <p>Kl: {this.props.game.time}. Tv: {this.props.game.channel}.</p>
           </div>
           <div className="match">
             <p > {this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
           </div>
+          <div className="tips">
+            <p>Ditt tips:</p>
+          </div>
           <div className="inputfields">
-            <label>
-                <input
+            <label >
+                <input className="input"
                   value={this.state.newHomeScore}
                   onChange={this.handleChangeHomeScore}
                   type="number"
                   score={game.homeScore} >
                 </input> –
-                <input
+                <input className="input"
                   onChange={this.handleChangeAwayScore}
                   type="number"
                   score={game.awayScore} >

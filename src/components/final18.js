@@ -118,10 +118,12 @@ render() {
       // {this.props.groups.map((xx) => {
       //
       // })}
-      //
-      //
+
+
       // groups   game => {
-      //   const country = group[final18.homeTeamKeys.group][final18.homeTeamKeys.index]}
+      //   const A1 = {final18[0].homeTeamKeys.group][final18.homeTeamKeys.index]}
+      //
+      //   const country18 = [final18.homeTeamKeys.group][final18.homeTeamKeys.index]}
 
 
       //   <div>

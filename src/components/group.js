@@ -16,6 +16,7 @@ class Group extends React.Component {
              return (<Game
                     addScore = {this.props.addScore}
                     game={gameData}
+                    time={this.props.time}
                     country={this.props.country}
                     playedGames={this.props.playedGames}
                     wins={this.props.wins}
@@ -26,6 +27,9 @@ class Group extends React.Component {
                     points={this.props.points} />)
           }
         })}
+        </div>
+        <div className="table-headline">
+          <p><span> DIN TABELL </span></p>
         </div>
         <div className="table-container">
           { this.props.table.map((tableData) => {
