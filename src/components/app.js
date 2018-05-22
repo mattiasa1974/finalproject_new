@@ -316,16 +316,12 @@ handleScore = (matchId, awayTeam, awayScore,
   Object.keys(groups).forEach(key => {
 
    const unsorted = groups[key]
-   const sorted = unsorted.sort()
+   const sorted = unsorted.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points))
    groups[key] = sorted
    // console.log(groups[key])
-   const sortedTables = sorted.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  )
-   console.log(sortedTables)
+   // const sortedTables =   )
+   console.log(sorted)
 
-  // [1] -> 2nd team per group
-   var tableX = sortedTables[1].country
-
-   console.log(tableX)
 
 
 
