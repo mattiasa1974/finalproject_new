@@ -11,6 +11,9 @@ render() {
 
     return (
         <div>
+          <div className="groupstage-headline">
+            <p><span> ÅTTONDELSFINAL </span></p>
+          </div>
           {this.props.final18.map((final18Data) => {
 
             return (<Game

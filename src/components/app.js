@@ -527,7 +527,9 @@ populateCountries = () => {
         </div>
       </BrowserRouter>
         <div>
-          <Final18 final18={this.state.final18} />
+          <Final18
+          addScore = {this.handleScore18}
+          final18={this.state.final18} />
         </div>
       </div>
 
