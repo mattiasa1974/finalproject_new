@@ -401,8 +401,11 @@ handleScore = (matchId, awayTeam, awayScore,
   games[index].awayScore = awayScore
   games[index].homeScore = homeScore
 
+
   // const newAwayScore = this.state.awayScore
   this.setState({ games: games })
+
+  localStorage.setItem("games", JSON.stringify(games))
 
   const table = calculateResult(this.state.games)
   //console.log(table)
@@ -426,10 +429,6 @@ handleScore = (matchId, awayTeam, awayScore,
   )
 
 
-  // groups = [A:[], B:[]]
-
-
-
   // [A, B]
   Object.keys(groups).forEach(key => {
 
@@ -439,22 +438,17 @@ handleScore = (matchId, awayTeam, awayScore,
    // console.log(groups[key])
    // const sortedTables =   )
    console.log(sorted)
-
       // console.log(groups.A[0].country)
       // let A1 = groups.A[0].country
-
-
     this.setState({groups: groups})
-
   })
 
   //Set countrynames for final 18
   const newFinal18 = this.populateCountries()
   this.setState({final18: newFinal18})
 
-
-
 }
+
 
 populateCountries = () => {
   const { groups, final18 } = this.state;
