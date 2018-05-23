@@ -104,12 +104,13 @@ class Final18 extends React.Component {
 
 
 xxx = () => {
-  this.state.final18.map(eight => {
+  const newFinal18State = this.state.final18.map(eight => {
+    console.log("hej", eight, eight.homeTeamKeys)
     const groupLetter = eight.homeTeamKeys.group
     const countryName = this.getGroupCountryWinner(groupLetter)
     eight.homeTeam = countryName
-
   })
+  // this.setState({ final18: newFinal18State })
 }
 
 getGroupCountryWinner = (groupLetter) => {
@@ -119,19 +120,28 @@ if(groups){
   console.log(group[0].country)
   return groups[groupLetter].country
 } else {
-
-  console.log('NO GROUPS')
-
+  // console.log('NO GROUPS')
   return ""
 }
 }
 
+getGroupCountrySecond = (groupLetter) => {
+  const { groups } = this.props;
+if(groups){
+  const group=groups[groupLetter]
+  // console.log(group[0].country)
+  return groups[groupLetter].country
+} else {
+  // console.log('NO GROUPS')
+  return ""
+}
+}
 
 render() {
 
    this.xxx()
    // console.log(this.props.groups)
-   const groupH = this.getGroupCountryWinner("H")
+   const groupH = this.getGroupCountryWinner("A")
    console.log('groupph', groupH);
    //console.log(this.getGroup("H"))
    // console.log(groupH)
