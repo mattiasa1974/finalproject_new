@@ -463,9 +463,10 @@ populateCountries = () => {
     const homeGroupLetter = eight.homeTeamKeys.group
     const homeWinnerIndex = eight.homeTeamKeys.index
 
-    if(groups[homeGroupLetter].length >= 2){
+    if(groups[homeGroupLetter].length >= 2 ){
       const countryObj = groups[homeGroupLetter][homeWinnerIndex]
-      if (countryObj.playedGames > 0)
+      // console.log(countryObj)
+      // if (countryObj.playedGames > 0)
       eight.homeTeam = countryObj.country
     }
 
@@ -474,6 +475,7 @@ populateCountries = () => {
 
     if(groups[awayGroupLetter].length >= 2 ){
       const countryObj = groups[awayGroupLetter][awayWinnerIndex]
+      if (countryObj.playedGames > 0)
       eight.awayTeam = countryObj.country
     }
 
