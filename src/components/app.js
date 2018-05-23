@@ -274,7 +274,107 @@ class App extends React.Component {
       awayScore: null,
       group: "1_8"
     }
-    ]
+    ],
+     groups: {
+      A: [],
+      B: [],
+      C: [],
+      D: [],
+      E: [],
+      F: [],
+      G: [],
+      H: []
+    },
+    final18: [
+    {
+    matchId: 49,
+    date: "30/6",
+    homeTeamKeys: {group: "C", index: 0},
+    homeTeam: "1C",
+    awayTeamKeys: {group: "D", index: 1},
+    awayTeam: "2D",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 50,
+    date: "30/6",
+    homeTeamKeys: {group: "A", index: 0},
+    homeTeam: "1A",
+    awayTeamKeys: {group: "B", index: 1},
+    awayTeam: "2B",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 51,
+    date: "1/7",
+    homeTeamKeys: {group: "B", index: 0},
+    homeTeam: "1B",
+    awayTeamKeys: {group: "A", index: 1},
+    awayTeam: "2A",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 52,
+    date: "1/7",
+    homeTeamKeys: {group: "D", index: 0},
+    homeTeam: "1D",
+    awayTeamKeys: {group: "C", index: 1},
+    awayTeam: "2C",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 53,
+    date: "2/7",
+    homeTeamKeys: {group: "E", index: 0},
+    homeTeam: "1E",
+    awayTeamKeys: {group: "F", index: 1},
+    awayTeam: "2F",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 54,
+    date: "2/7",
+    homeTeamKeys: {group: "G", index: 0},
+    homeTeam: "1G",
+    awayTeamKeys: {group: "H", index: 1},
+    awayTeam: "2H",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 55,
+    date: "3/7",
+    homeTeamKeys: {group: "F", index: 0},
+    homeTeam: "1F",
+    awayTeamKeys: {group: "E", index: 1},
+    awayTeam: "2E",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  },
+  {
+    matchId: 56,
+    date: "3/7",
+    homeTeamKeys: {group: "H", index: 0},
+    homeTeam: "1H",
+    awayTeamKeys: {group: "G", index: 1},
+    awayTeam: "2G",
+    homeScore: null,
+    awayScore: null,
+    group: "1_8"
+  }
+  ]
   }
 
 }
@@ -285,7 +385,8 @@ class App extends React.Component {
 handleScore = (matchId, awayTeam, awayScore,
   homeTeam, homeScore) => {
   // console.log(matchId, awayTeam, awayScore)
-  const games = this.state.games
+  const { games, groups } = this.state
+
   const index = games.findIndex((game) => game.matchId === matchId)
   games[index].awayScore = awayScore
   games[index].homeScore = homeScore
@@ -302,16 +403,7 @@ handleScore = (matchId, awayTeam, awayScore,
 
   this.setState({ table: sortedTable })
 
-  let groups = {
-    A: [],
-    B: [],
-    C: [],
-    D: [],
-    E: [],
-    F: [],
-    G: [],
-    H: []
-  }
+
 
   // console.log('table: ',table)
 
@@ -323,6 +415,7 @@ handleScore = (matchId, awayTeam, awayScore,
 
 
   // groups = [A:[], B:[]]
+
 
 
   // [A, B]
@@ -343,8 +436,38 @@ handleScore = (matchId, awayTeam, awayScore,
 
   })
 
+  //Set countrynames for final 18
+  const newFinal18 = this.populateCountries()
+  this.setState({final18: newFinal18})
+
+
+
 }
 
+populateCountries = () => {
+  const { groups, final18 } = this.state;
+  const newFinal18 = final18.map(eight => {
+    // console.log("hej", eight, eight.homeTeamKeys)
+    const homeGroupLetter = eight.homeTeamKeys.group
+    const homeWinnerIndex = eight.homeTeamKeys.index
+
+    if(groups[homeGroupLetter].length >= 2 ){
+      const countryObj = groups[homeGroupLetter][homeWinnerIndex]
+      eight.homeTeam = countryObj.country
+    }
+
+    const awayGroupLetter = eight.awayTeamKeys.group
+    const awayWinnerIndex = eight.awayTeamKeys.index
+
+    if(groups[awayGroupLetter].length >= 2 ){
+      const countryObj = groups[awayGroupLetter][awayWinnerIndex]
+      eight.awayTeam = countryObj.country
+    }
+
+    return eight
+  })
+  return newFinal18
+}
 
 
   render() {
@@ -394,9 +517,7 @@ handleScore = (matchId, awayTeam, awayScore,
         </div>
       </BrowserRouter>
         <div>
-          <Final18
-          groups={this.state.groups}
-          />
+          <Final18 final18={this.state.final18} />
         </div>
       </div>
 
