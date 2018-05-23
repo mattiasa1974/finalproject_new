@@ -101,7 +101,9 @@ class App extends React.Component {
         awayTeam: "Iran",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "17.00",
+        channel: "SVT"
       },
       {
         matchId: 8,
@@ -110,7 +112,9 @@ class App extends React.Component {
         awayTeam: "Spanien",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "20.00",
+        channel: "SVT"
       },
       {
         matchId: 9,
@@ -119,7 +123,9 @@ class App extends React.Component {
         awayTeam: "Marocko",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "14.00",
+        channel: "SVT"
       },
       {
         matchId: 10,
@@ -128,7 +134,9 @@ class App extends React.Component {
         awayTeam: "Spanien",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "20.00",
+        channel: "TV4"
       },
       {
         matchId: 11,
@@ -137,7 +145,9 @@ class App extends React.Component {
         awayTeam: "Portugal",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "20.00",
+        channel: "SVT"
       },
       {
         matchId: 12,
@@ -146,7 +156,9 @@ class App extends React.Component {
         awayTeam: "Marocko",
         homeScore: null,
         awayScore: null,
-        group: "B"
+        group: "B",
+        time: "20.00",
+        channel: "SVT"
       },
       {
       matchId: 13,
@@ -155,7 +167,9 @@ class App extends React.Component {
       awayTeam: "Australien",
       homeScore: null,
       awayScore: null,
-      group: "C"
+      group: "C",
+      time: "12.00",
+      channel: "SVT"
     },
     {
       matchId: 19,
@@ -164,7 +178,9 @@ class App extends React.Component {
       awayTeam: "Island",
       homeScore: null,
       awayScore: null,
-      group: "D"
+      group: "D",
+      time: "15.00",
+      channel: "SVT"
     },
     {
       matchId: 25,
@@ -173,7 +189,9 @@ class App extends React.Component {
       awayTeam: "Serbien",
       homeScore: null,
       awayScore: null,
-      group: "E"
+      group: "E",
+      time: "14.00",
+      channel: "TV4"
     },
     {
       matchId: 31,
@@ -182,7 +200,9 @@ class App extends React.Component {
       awayTeam: "Mexiko",
       homeScore: null,
       awayScore: null,
-      group: "F"
+      group: "F",
+      time: "17.00",
+      channel: "TV4"
     },
     {
       matchId: 37,
@@ -191,7 +211,9 @@ class App extends React.Component {
       awayTeam: "Panama",
       homeScore: null,
       awayScore: null,
-      group: "G"
+      group: "G",
+      time: "17.00",
+      channel: "SVT"
     },
     {
       matchId: 43,
@@ -200,7 +222,9 @@ class App extends React.Component {
       awayTeam: "Japan",
       homeScore: null,
       awayScore: null,
-      group: "H"
+      group: "H",
+      time: "14.00",
+      channel: "TV4"
     },
     // {
     //   matchId: 49,
@@ -295,7 +319,9 @@ class App extends React.Component {
     awayTeam: "2D",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "16.00",
+    channel: "TV4"
   },
   {
     matchId: 50,
@@ -306,7 +332,9 @@ class App extends React.Component {
     awayTeam: "2B",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "20.00",
+    channel: "SVT"
   },
   {
     matchId: 51,
@@ -317,7 +345,9 @@ class App extends React.Component {
     awayTeam: "2A",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "16.00",
+    channel: "SVT"
   },
   {
     matchId: 52,
@@ -328,7 +358,9 @@ class App extends React.Component {
     awayTeam: "2C",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "20.00",
+    channel: "TV4"
   },
   {
     matchId: 53,
@@ -339,7 +371,9 @@ class App extends React.Component {
     awayTeam: "2F",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "16.00",
+    channel: "TV4"
   },
   {
     matchId: 54,
@@ -350,7 +384,9 @@ class App extends React.Component {
     awayTeam: "2H",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "20.00",
+    channel: "SVT"
   },
   {
     matchId: 55,
@@ -361,7 +397,9 @@ class App extends React.Component {
     awayTeam: "2E",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "16.00",
+    channel: "SVT"
   },
   {
     matchId: 56,
@@ -372,7 +410,9 @@ class App extends React.Component {
     awayTeam: "2G",
     homeScore: null,
     awayScore: null,
-    group: "1_8"
+    group: "1_8",
+    time: "20.00",
+    channel: "TV4"
   }
   ]
   }
