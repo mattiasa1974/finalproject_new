@@ -406,6 +406,8 @@ handleScore = (matchId, awayTeam, awayScore,
 
   const table = calculateResult(this.state.games)
   //console.log(table)
+  const final18table = calculateResult(this.state.final18)
+  console.log(final18table)
 
   const unsortedTable = table
   const sortedTable = unsortedTable.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  );
@@ -461,8 +463,9 @@ populateCountries = () => {
     const homeGroupLetter = eight.homeTeamKeys.group
     const homeWinnerIndex = eight.homeTeamKeys.index
 
-    if(groups[homeGroupLetter].length >= 2 ){
+    if(groups[homeGroupLetter].length >= 2){
       const countryObj = groups[homeGroupLetter][homeWinnerIndex]
+      if (countryObj.playedGames > 0)
       eight.homeTeam = countryObj.country
     }
 
@@ -528,6 +531,7 @@ populateCountries = () => {
       </BrowserRouter>
         <div>
           <Final18
+            table={this.state.table}
           addScore = {this.handleScore18}
           final18={this.state.final18} />
         </div>

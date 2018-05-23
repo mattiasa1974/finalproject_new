@@ -16,6 +16,9 @@ render() {
           </div>
           {this.props.final18.map((final18Data) => {
 
+
+            // if ((final18Data.awayScore !== null) && (final18Data.homeScore !== null))
+            // console.log
             return (<Game
                     addScore={this.props.addScore}
                     game={final18Data} />)
