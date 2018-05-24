@@ -18,7 +18,7 @@ class Game extends React.Component {
   }
 
   handleChangeHomeScore = event => {
-    console.log('handleChangeHomeScore', event.target.value);
+    // console.log('handleChangeHomeScore', event.target.value);
     if (this.state.awayScore !== null) {
       console.log('here')
       this.props.addScore(this.props.game.matchId,

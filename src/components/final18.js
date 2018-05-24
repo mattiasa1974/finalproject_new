@@ -7,7 +7,7 @@ class Final18 extends React.Component {
 
 render() {
 
-  console.log(this.props.final18)
+  // console.log(this.props.final18)
 
     return (
         <div>

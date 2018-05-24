@@ -311,7 +311,7 @@ class App extends React.Component {
     },
     final18: [
     {
-    matchId: 49,
+    matchId: 1,
     date: "30/6",
     homeTeamKeys: {group: "C", index: 0},
     homeTeam: "1C",
@@ -324,7 +324,7 @@ class App extends React.Component {
     channel: "TV4"
   },
   {
-    matchId: 50,
+    matchId: 2,
     date: "30/6",
     homeTeamKeys: {group: "A", index: 0},
     homeTeam: "1A",
@@ -337,7 +337,7 @@ class App extends React.Component {
     channel: "SVT"
   },
   {
-    matchId: 51,
+    matchId: 3,
     date: "1/7",
     homeTeamKeys: {group: "B", index: 0},
     homeTeam: "1B",
@@ -350,7 +350,7 @@ class App extends React.Component {
     channel: "SVT"
   },
   {
-    matchId: 52,
+    matchId: 4,
     date: "1/7",
     homeTeamKeys: {group: "D", index: 0},
     homeTeam: "1D",
@@ -363,7 +363,7 @@ class App extends React.Component {
     channel: "TV4"
   },
   {
-    matchId: 53,
+    matchId: 5,
     date: "2/7",
     homeTeamKeys: {group: "E", index: 0},
     homeTeam: "1E",
@@ -376,7 +376,7 @@ class App extends React.Component {
     channel: "TV4"
   },
   {
-    matchId: 54,
+    matchId: 6,
     date: "2/7",
     homeTeamKeys: {group: "G", index: 0},
     homeTeam: "1G",
@@ -389,7 +389,7 @@ class App extends React.Component {
     channel: "SVT"
   },
   {
-    matchId: 55,
+    matchId: 7,
     date: "3/7",
     homeTeamKeys: {group: "F", index: 0},
     homeTeam: "1F",
@@ -402,7 +402,7 @@ class App extends React.Component {
     channel: "SVT"
   },
   {
-    matchId: 56,
+    matchId: 8,
     date: "3/7",
     homeTeamKeys: {group: "H", index: 0},
     homeTeam: "1H",
@@ -415,12 +415,51 @@ class App extends React.Component {
     channel: "TV4"
   }
   ],
-  final14: {
-    57: null,
-    58: null,
-    59: null,
-    60: null
-  }
+  final14:[
+    {
+      matchId: 2,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 0,
+      awayTeam: null,
+      awayTeamIndex: 1,
+      date: "",
+      time: "",
+      channel: ""
+    },
+    {
+      matchId: 2,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 4,
+      awayTeam: null,
+      awayTeamIndex: 5,
+      date: "",
+      time: "",
+      channel: ""
+    },
+    {
+      matchId: 3,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 6,
+      awayTeam: null,
+      awayTeamIndex: 7,
+      date: "",
+      time: "",
+      channel: ""
+    },{
+      matchId: 4,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 2,
+      awayTeam: null,
+      awayTeamIndex: 3,
+      date: "",
+      time: "",
+      channel: ""
+    }
+  ]
   }
 
 }
@@ -429,11 +468,21 @@ handleScore18 = (matchId, awayTeam, awayScore,
   homeTeam, homeScore) => {
     const { final14 } = this.state
 
-    if (homeScore > awayScore) {
-      final14[matchId] = homeTeam
-    } else if (awayScore > homeScore){
-      final14[matchId] = awayTeam
+    const index = final14.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
+    if(final14[index].homeTeamIndex === matchId){
+      if (homeScore > awayScore) {
+        final14[index].homeTeam = homeTeam
+      }else{
+        final14[index].homeTeam = awayTeam
+      }
+    }else{
+      if (homeScore > awayScore) {
+        final14[index].awayTeam = homeTeam
+      }else{
+        final14[index].awayTeam = awayTeam
+      }
     }
+
     this.setState({ final14 })
     console.log(final14)
   }
