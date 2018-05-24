@@ -7,6 +7,8 @@ import "./group.css"
 import Final18 from "./final18"
 import Final14 from "./final14"
 import Final12 from "./final12"
+import Final from "./final"
+import Brons from "./brons"
 
 class App extends React.Component {
 
@@ -498,9 +500,10 @@ class App extends React.Component {
       date: "",
       time: "",
       channel: ""
-    },
+    }],
+    brons: [
     {
-      matchId: 2,
+      matchId: 1,
       country: null,
       homeTeam: null,
       homeTeamIndex: 3,
@@ -510,8 +513,8 @@ class App extends React.Component {
       time: "",
       channel: ""
     }
-    ]
-  }
+  ]
+}
 
 }
 
@@ -568,7 +571,7 @@ handleScore18 = (matchId, awayTeam, awayScore,
 
     handleScore12 = (matchId, awayTeam, awayScore,
       homeTeam, homeScore) => {
-        const { final } = this.state
+        const { final, brons } = this.state
 
         const index = final.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
         if(final[index].homeTeamIndex === matchId){
@@ -587,8 +590,47 @@ handleScore18 = (matchId, awayTeam, awayScore,
           }
         }
 
-        this.setState({ final })
+        if(brons[index].homeTeamIndex === matchId){
+          // console.log("hej")
+          if (homeScore < awayScore) {
+            brons[index].homeTeam = homeTeam
+          }else{
+            brons[index].homeTeam = awayTeam
+          }
+        }else{
+          // console.log("hi")
+          if (homeScore < awayScore) {
+            brons[index].awayTeam = homeTeam
+          }else{
+            brons[index].awayTeam = awayTeam
+          }
+        }
+
+        this.setState({ final, brons })
       }
+
+      handleScoreFinal = (matchId, awayTeam, awayScore,
+        homeTeam, homeScore) => {
+          const { Final } = this.state
+
+          if (homeScore > awayScore) {
+            this.setState({ winner: homeTeam})
+          } else {
+            this.setState({ winner: awayTeam})
+          }
+        }
+
+        handleScoreBrons = (matchId, awayTeam, awayScore,
+          homeTeam, homeScore) => {
+            const { Brons } = this.state
+
+            if (homeScore > awayScore) {
+              this.setState({ Brons: homeTeam})
+            } else {
+              this.setState({ Brons: awayTeam})
+            }
+          }
+
 
 
 handleScore = (matchId, awayTeam, awayScore,
@@ -750,6 +792,18 @@ populateCountries = () => {
             table={this.state.table}
           addScore = {this.handleScore12}
           final12={this.state.final12} />
+        </div>
+        <div>
+          <Brons
+            table={this.state.table}
+          addScore = {this.handleScoreBrons}
+          brons={this.state.brons} />
+        </div>
+        <div>
+          <Final
+            table={this.state.table}
+          addScore = {this.handleScoreFinal}
+          final={this.state.final} />
         </div>
       </div>
 
