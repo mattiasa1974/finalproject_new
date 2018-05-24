@@ -10,6 +10,7 @@ import Final12 from "./final12"
 import Final from "./final"
 import Brons from "./brons"
 
+
 class App extends React.Component {
 
   constructor(props) {
@@ -176,6 +177,61 @@ class App extends React.Component {
       channel: "SVT"
     },
     {
+      matchId: 14,
+      date: "16/6",
+      homeTeam: "Peru",
+      awayTeam: "Danmark",
+      homeScore: null,
+      awayScore: null,
+      group: "C",
+      time: "18.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 15,
+      date: "21/6",
+      homeTeam: "Danmark",
+      awayTeam: "Australien",
+      homeScore: null,
+      awayScore: null,
+      group: "C",
+      time: "14.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 16,
+      date: "21/6",
+      homeTeam: "Frankrike",
+      awayTeam: "Peru",
+      homeScore: null,
+      awayScore: null,
+      group: "C",
+      time: "17.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 17,
+      date: "26/6",
+      homeTeam: "Danmark",
+      awayTeam: "Frankrike",
+      homeScore: null,
+      awayScore: null,
+      group: "C",
+      time: "16.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 18,
+      date: "26/6",
+      homeTeam: "Australien",
+      awayTeam: "Peru",
+      homeScore: null,
+      awayScore: null,
+      group: "C",
+      time: "16.00",
+      channel: "SVT"
+    },
+    {
       matchId: 19,
       date: "16/6",
       homeTeam: "Argentina",
@@ -187,6 +243,61 @@ class App extends React.Component {
       channel: "SVT"
     },
     {
+      matchId: 20,
+      date: "16/6",
+      homeTeam: "Kroatien",
+      awayTeam: "Nigeria",
+      homeScore: null,
+      awayScore: null,
+      group: "D",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 21,
+      date: "21/6",
+      homeTeam: "Argentina",
+      awayTeam: "Kroatien",
+      homeScore: null,
+      awayScore: null,
+      group: "D",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 22,
+      date: "22/6",
+      homeTeam: "Nigeria",
+      awayTeam: "Island",
+      homeScore: null,
+      awayScore: null,
+      group: "D",
+      time: "17.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 23,
+      date: "26/6",
+      homeTeam: "Nigeria",
+      awayTeam: "Argentina",
+      homeScore: null,
+      awayScore: null,
+      group: "D",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 24,
+      date: "26/6",
+      homeTeam: "Island",
+      awayTeam: "Kroatien",
+      homeScore: null,
+      awayScore: null,
+      group: "D",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
       matchId: 25,
       date: "17/6",
       homeTeam: "Costa Rica",
@@ -195,6 +306,61 @@ class App extends React.Component {
       awayScore: null,
       group: "E",
       time: "14.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 26,
+      date: "17/6",
+      homeTeam: "Brasilien",
+      awayTeam: "Schweiz",
+      homeScore: null,
+      awayScore: null,
+      group: "E",
+      time: "20.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 27,
+      date: "22/6",
+      homeTeam: "Brasilien",
+      awayTeam: "Costa Rica",
+      homeScore: null,
+      awayScore: null,
+      group: "E",
+      time: "14.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 28,
+      date: "22/6",
+      homeTeam: "Serbien",
+      awayTeam: "Schweiz",
+      homeScore: null,
+      awayScore: null,
+      group: "E",
+      time: "20.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 29,
+      date: "27/6",
+      homeTeam: "Serbien",
+      awayTeam: "Brasilien",
+      homeScore: null,
+      awayScore: null,
+      group: "E",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 30,
+      date: "27/6",
+      homeTeam: "Schweiz",
+      awayTeam: "Costa Rica",
+      homeScore: null,
+      awayScore: null,
+      group: "E",
+      time: "20.00",
       channel: "TV4"
     },
     {
@@ -209,6 +375,61 @@ class App extends React.Component {
       channel: "TV4"
     },
     {
+      matchId: 32,
+      date: "18/6",
+      homeTeam: "Sverige",
+      awayTeam: "Sydkorea",
+      homeScore: null,
+      awayScore: null,
+      group: "F",
+      time: "14.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 33,
+      date: "23/6",
+      homeTeam: "Sydkorea",
+      awayTeam: "Mexiko",
+      homeScore: null,
+      awayScore: null,
+      group: "F",
+      time: "17.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 34,
+      date: "23/6",
+      homeTeam: "Tyskland",
+      awayTeam: "Sverige",
+      homeScore: null,
+      awayScore: null,
+      group: "F",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 35,
+      date: "27/6",
+      homeTeam: "Sydkorea",
+      awayTeam: "Tyskland",
+      homeScore: null,
+      awayScore: null,
+      group: "F",
+      time: "16.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 36,
+      date: "27/6",
+      homeTeam: "Mexiko",
+      awayTeam: "Sverige",
+      homeScore: null,
+      awayScore: null,
+      group: "F",
+      time: "16.00",
+      channel: "SVT"
+    },
+    {
       matchId: 37,
       date: "18/6",
       homeTeam: "Belgien",
@@ -217,6 +438,61 @@ class App extends React.Component {
       awayScore: null,
       group: "G",
       time: "17.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 38,
+      date: "18/6",
+      homeTeam: "Tunisien",
+      awayTeam: "England",
+      homeScore: null,
+      awayScore: null,
+      group: "G",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 39,
+      date: "23/6",
+      homeTeam: "Belgien",
+      awayTeam: "Tunisien",
+      homeScore: null,
+      awayScore: null,
+      group: "G",
+      time: "14.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 40,
+      date: "24/6",
+      homeTeam: "England",
+      awayTeam: "Panama",
+      homeScore: null,
+      awayScore: null,
+      group: "G",
+      time: "14.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 41,
+      date: "28/6",
+      homeTeam: "England",
+      awayTeam: "Belgien",
+      homeScore: null,
+      awayScore: null,
+      group: "G",
+      time: "20.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 42,
+      date: "28/6",
+      homeTeam: "Panama",
+      awayTeam: "Tunisien",
+      homeScore: null,
+      awayScore: null,
+      group: "G",
+      time: "20.00",
       channel: "SVT"
     },
     {
@@ -230,78 +506,61 @@ class App extends React.Component {
       time: "14.00",
       channel: "TV4"
     },
-    // {
-    //   matchId: 49,
-    //   date: "30/6",
-    //   homeTeam: "1C",
-    //   awayTeam: "2D",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 50,
-    //   date: "30/6",
-    //   homeTeam: "1A",
-    //   awayTeam: "2B",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 51,
-    //   date: "1/7",
-    //   homeTeam: "1B",
-    //   awayTeam: "2A",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 52,
-    //   date: "1/7",
-    //   homeTeam: "1D",
-    //   awayTeam: "2C",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 53,
-    //   date: "2/7",
-    //   homeTeam: "1E",
-    //   awayTeam: "2F",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 54,
-    //   date: "2/7",
-    //   homeTeam: "1G",
-    //   awayTeam: "2H",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 55,
-    //   date: "3/7",
-    //   homeTeam: "1F",
-    //   awayTeam: "2E",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // },
-    // {
-    //   matchId: 56,
-    //   date: "3/7",
-    //   homeTeam: "1H",
-    //   awayTeam: "2G",
-    //   homeScore: null,
-    //   awayScore: null,
-    //   group: "1_8"
-    // }
+    {
+      matchId: 44,
+      date: "19/6",
+      homeTeam: "Polen",
+      awayTeam: "Senegal",
+      homeScore: null,
+      awayScore: null,
+      group: "H",
+      time: "17.00",
+      channel: "SVT"
+    },
+    {
+      matchId: 45,
+      date: "24/6",
+      homeTeam: "Japan",
+      awayTeam: "Senegal",
+      homeScore: null,
+      awayScore: null,
+      group: "H",
+      time: "17.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 46,
+      date: "24/6",
+      homeTeam: "Polen",
+      awayTeam: "Colombia",
+      homeScore: null,
+      awayScore: null,
+      group: "H",
+      time: "20.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 47,
+      date: "28/6",
+      homeTeam: "Japan",
+      awayTeam: "Polen",
+      homeScore: null,
+      awayScore: null,
+      group: "H",
+      time: "16.00",
+      channel: "TV4"
+    },
+    {
+      matchId: 48,
+      date: "28/6",
+      homeTeam: "Senegal",
+      awayTeam: "Colombia",
+      homeScore: null,
+      awayScore: null,
+      group: "H",
+      time: "16.00",
+      channel: "TV4"
+    },
     ],
      groups: {
       A: [],
@@ -427,9 +686,9 @@ class App extends React.Component {
       homeTeamIndex: 1,
       awayTeam: "1A / 2B",
       awayTeamIndex: 2,
-      date: "",
-      time: "",
-      channel: ""
+      date: "6/7",
+      time: "16.00",
+      channel: "SVT"
     },
     {
       matchId: 2,
@@ -438,9 +697,9 @@ class App extends React.Component {
       homeTeamIndex: 5,
       awayTeam: "1G / 2H",
       awayTeamIndex: 6,
-      date: "",
-      time: "",
-      channel: ""
+      date: "6/7",
+      time: "20.00",
+      channel: "TV4"
     },
     {
       matchId: 3,
@@ -449,9 +708,9 @@ class App extends React.Component {
       homeTeamIndex: 7,
       awayTeam: "1H / 2G",
       awayTeamIndex: 8,
-      date: "",
-      time: "",
-      channel: ""
+      date: "7/7",
+      time: "16.00",
+      channel: "TV4"
     },
     {
       matchId: 4,
@@ -460,9 +719,9 @@ class App extends React.Component {
       homeTeamIndex: 3,
       awayTeam: "1D / 2C",
       awayTeamIndex: 4,
-      date: "",
-      time: "",
-      channel: ""
+      date: "7/7",
+      time: "20.00",
+      channel: "SVT"
     }
   ],
   final12:[
@@ -473,9 +732,9 @@ class App extends React.Component {
       homeTeamIndex: 1,
       awayTeam: "Kvartsfinal 2",
       awayTeamIndex: 2,
-      date: "",
-      time: "",
-      channel: ""
+      date: "10/7",
+      time: "20.00",
+      channel: "SVT"
     },
     {
       matchId: 2,
@@ -484,9 +743,9 @@ class App extends React.Component {
       homeTeamIndex: 3,
       awayTeam: "Kvartsfinal 4",
       awayTeamIndex: 4,
-      date: "",
-      time: "",
-      channel: ""
+      date: "11/7",
+      time: "20.00",
+      channel: "TV4"
     }
   ],
   final:
@@ -497,9 +756,9 @@ class App extends React.Component {
       homeTeamIndex: 1,
       awayTeam: null,
       awayTeamIndex: 2,
-      date: "",
-      time: "",
-      channel: ""
+      date: "15/7",
+      time: "17.00",
+      channel: "SVT"
     },
     brons: {
       matchId: 1,
@@ -508,9 +767,9 @@ class App extends React.Component {
       homeTeamIndex: 1,
       awayTeam: null,
       awayTeamIndex: 2,
-      date: "",
-      time: "",
-      channel: ""
+      date: "14/7",
+      time: "16.00",
+      channel: "TV4"
     }
 }
 
