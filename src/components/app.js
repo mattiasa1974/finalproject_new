@@ -416,11 +416,12 @@ class App extends React.Component {
   }
   ],
   quarterFinals: {
-    56: null,
+    57: null,
+    58: null,
+    59: null,
+    60: null
   }
   }
-
-
 
 }
 
