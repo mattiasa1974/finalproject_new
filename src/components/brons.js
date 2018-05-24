@@ -14,13 +14,9 @@ render() {
           <div className="groupstage-headline">
             <p><span> BRONSMATCH </span></p>
           </div>
-          {this.props.brons.map((bronsData) => {
-
-
-            return (<Game
-                    addScore={this.props.addScore}
-                    game={bronsData} />)
-          })}
+          {<Game
+            addScore={this.props.addScore}
+            game={this.props.brons} />}
 
         </div>
     )

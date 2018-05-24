@@ -14,13 +14,9 @@ render() {
           <div className="groupstage-headline">
             <p><span> FINAL </span></p>
           </div>
-          {this.props.final.map((finalData) => {
-
-
-            return (<Game
-                    addScore={this.props.addScore}
-                    game={finalData} />)
-          })}
+          {<Game
+            addScore={this.props.addScore}
+            game={this.props.final} />}
 
         </div>
     )

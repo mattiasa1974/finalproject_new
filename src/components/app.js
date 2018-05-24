@@ -489,7 +489,7 @@ class App extends React.Component {
       channel: ""
     }
   ],
-  final:[
+  final:
     {
       matchId: 1,
       country: null,
@@ -500,20 +500,18 @@ class App extends React.Component {
       date: "",
       time: "",
       channel: ""
-    }],
-    brons: [
-    {
+    },
+    brons: {
       matchId: 1,
       country: null,
       homeTeam: null,
-      homeTeamIndex: 3,
+      homeTeamIndex: 1,
       awayTeam: null,
-      awayTeamIndex: 4,
+      awayTeamIndex: 2,
       date: "",
       time: "",
       channel: ""
     }
-  ]
 }
 
 }
@@ -573,36 +571,35 @@ handleScore18 = (matchId, awayTeam, awayScore,
       homeTeam, homeScore) => {
         const { final, brons } = this.state
 
-        const index = final.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
-        if(final[index].homeTeamIndex === matchId){
+        if(final.homeTeamIndex === matchId){
           // console.log("hej")
           if (homeScore > awayScore) {
-            final[index].homeTeam = homeTeam
+            final.homeTeam = homeTeam
           }else{
-            final[index].homeTeam = awayTeam
+            final.homeTeam = awayTeam
           }
         }else{
           // console.log("hi")
           if (homeScore > awayScore) {
-            final[index].awayTeam = homeTeam
+            final.awayTeam = homeTeam
           }else{
-            final[index].awayTeam = awayTeam
+            final.awayTeam = awayTeam
           }
         }
 
-        if(brons[index].homeTeamIndex === matchId){
+        if(brons.homeTeamIndex === matchId){
           // console.log("hej")
           if (homeScore < awayScore) {
-            brons[index].homeTeam = homeTeam
+            brons.homeTeam = homeTeam
           }else{
-            brons[index].homeTeam = awayTeam
+            brons.homeTeam = awayTeam
           }
         }else{
           // console.log("hi")
           if (homeScore < awayScore) {
-            brons[index].awayTeam = homeTeam
+            brons.awayTeam = homeTeam
           }else{
-            brons[index].awayTeam = awayTeam
+            brons.awayTeam = awayTeam
           }
         }
 
