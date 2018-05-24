@@ -5,26 +5,24 @@ import "./group.css"
 
 class Group extends React.Component {
 
+
+
+
   render() {
-// console.log(this.props)
+
+    const { groups, games, addScore } = this.props
+    const group = groups[this.props.match.params.groupId]
+
     return (
       <div>
         <div>
-          { this.props.games.map((gameData) => {
+          { games.map((gameData) => {
             if (gameData.group === this.props.match.params.groupId)
             {
              return (<Game
-                    addScore = {this.props.addScore}
+                    addScore = {addScore}
                     game={gameData}
-                    time={this.props.time}
-                    country={this.props.country}
-                    playedGames={this.props.playedGames}
-                    wins={this.props.wins}
-                    draws={this.props.draws}
-                    losts={this.props.losts}
-                    totOwnScore={this.props.totOwnScore}
-                    totAgainstScore={this.props.totAgainstScore}
-                    points={this.props.points} />)
+                     />)
           }
         })}
         </div>
@@ -32,11 +30,9 @@ class Group extends React.Component {
           <p><span> DIN TABELL </span></p>
         </div>
         <div className="table-container">
-          { this.props.table.map((tableData) => {
-            console.log(tableData.group)
-            console.log(this.props.match.params.groupId)
-            if (tableData.group === this.props.match.params.groupId)
-            {
+          { group.map((tableData) => {
+            // console.log(tableData.group)
+            // console.log(this.props.match.params.groupId)
              return (
                     <div className="table-row">
                       <div className="table-item country">{tableData.country}</div>
@@ -52,15 +48,6 @@ class Group extends React.Component {
                       <div className="table-item">{tableData.diffScore}</div>
                     </div>
                   )
-                    // country={this.props.country}
-                    // playedGames={this.props.playedGames}
-                    // wins={this.props.wins}
-                    // draws={this.props.draws}
-                    // losts={this.props.losts}
-                    // totOwnScore={this.props.totOwnScore}
-                    // totAgainstScore={this.props.totAgainstScore}
-                    // points={this.props.points})
-          }
         })}
         </div>
       </div>

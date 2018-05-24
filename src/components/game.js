@@ -55,13 +55,13 @@ class Game extends React.Component {
       <div className="gamebox">
         <div className="game-container">
           <div className="date">
-            <p>{this.props.game.date}</p>
+            <p>{game.date}</p>
           </div>
           <div className="time">
-            <p>Kl: {this.props.game.time}. Tv: {this.props.game.channel}.</p>
+            <p>Kl: {game.time}. Tv: {game.channel}.</p>
           </div>
           <div className="match">
-            <p > {this.props.game.homeTeam} – {this.props.game.awayTeam}</p>
+            <p > {game.homeTeam} – {game.awayTeam}</p>
           </div>
           <div className="tips">
             <p>Ditt tips:</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import { BrowserRouter, Route, NavLink } from "react-router-dom"
 import Group from "./group"
 import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
@@ -414,8 +414,13 @@ class App extends React.Component {
     time: "20.00",
     channel: "TV4"
   }
-  ]
+  ],
+  quarterFinals: {
+    56: null,
   }
+  }
+
+
 
 }
 
@@ -428,6 +433,8 @@ handleScore18 = (matchId, awayTeam, awayScore,
     final18[index].homeScore = homeScore
 
     this.setState({ final18: final18})
+
+    // quarterFinals[matchId] =
 
   }
 
@@ -452,34 +459,30 @@ handleScore = (matchId, awayTeam, awayScore,
   const final18table = calculateResult(this.state.final18)
   console.log(final18table)
 
-  const unsortedTable = table
-  const sortedTable = unsortedTable.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  );
-  //console.log(sortedTable)
+  // const unsortedTable = table
+  // const sortedTable = unsortedTable.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points)  );
+  // //console.log(sortedTable)
+  //
+  // this.setState({ table: sortedTable })
 
-  this.setState({ table: sortedTable })
 
 
-
-  // console.log('table: ',table)
-
+  // nollställ grupperna
+  Object.keys(groups).forEach(key => {
+    groups[key] = []
+   }
+  )
   table.forEach(country => {
-    console.log('group: ', groups[country.group])
     groups[country.group].push(country)
    }
   )
 
-
-  // [A, B]
   Object.keys(groups).forEach(key => {
 
-   const unsorted = groups[key]
-   const sorted = unsorted.sort((a,b) => (a.diffScore < b.diffScore) || (a.points < b.points))
-   groups[key] = sorted
-   // console.log(groups[key])
-   // const sortedTables =   )
-   console.log(sorted)
-      // console.log(groups.A[0].country)
-      // let A1 = groups.A[0].country
+    const unsorted = groups[key]
+    const sorted = unsorted.sort(this.compareScore)
+    groups[key] = sorted
+
     this.setState({groups: groups})
   })
 
@@ -487,6 +490,28 @@ handleScore = (matchId, awayTeam, awayScore,
   const newFinal18 = this.populateCountries()
   this.setState({final18: newFinal18})
 
+}
+
+compareScore = (a, b) => {
+  if(a.points < b.points){
+    return true
+  } else if(a.points > b.points) {
+    return false
+  } else {
+    if(a.diffScore < b.diffScore){
+      return true
+    } else if(a.diffScore > b.diffScore){
+      return false
+    } else {
+      if(a.totOwnScore < b.totOwnScore){
+        return true
+      } else if (a.totOwnScore > b.totOwnScore){
+        return false
+      } else {
+        return 0
+      }
+    }
+  }
 }
 
 
@@ -500,7 +525,7 @@ populateCountries = () => {
     if(groups[homeGroupLetter].length >= 2 ){
       const countryObj = groups[homeGroupLetter][homeWinnerIndex]
       // console.log(countryObj)
-      // if (countryObj.playedGames > 0)
+      if (countryObj.playedGames > 0)
       eight.homeTeam = countryObj.country
     }
 
@@ -535,14 +560,14 @@ populateCountries = () => {
       <BrowserRouter>
         <div>
           <ul className="grouprow">
-            <li><Link to="/A" className="groupbox">A</Link></li>
-            <li><Link to="/B" className="groupbox">B</Link></li>
-            <li><Link to="/C" className="groupbox">C</Link></li>
-            <li><Link to="/D" className="groupbox">D</Link></li>
-            <li><Link to="/E" className="groupbox">E</Link></li>
-            <li><Link to="/F" className="groupbox">F</Link></li>
-            <li><Link to="/G" className="groupbox">G</Link></li>
-            <li><Link to="/H" className="groupbox">H</Link></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/A" className="groupbox">A</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/B" className="groupbox">B</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/C" className="groupbox">C</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/D" className="groupbox">D</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/E" className="groupbox">E</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/F" className="groupbox">F</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/G" className="groupbox">G</NavLink></li>
+            <li><NavLink activeClassName={"groupboxActive"} to="/H" className="groupbox">H</NavLink></li>
           </ul>
 
           <Route path="/:groupId"
@@ -550,17 +575,7 @@ populateCountries = () => {
               <Group {...props}
               addScore = {this.handleScore}
               games={this.state.games}
-              country={this.country}
-              time={this.time}
-              playedGames={this.playedGames}
-              wins={this.wins}
-              draws={this.draws}
-              losts={this.losts}
-              totOwnScore={this.totOwnScore}
-              totAgainstScore={this.totAgainstScore}
-              diffScore={this.diffScore}
-              points={this.points}
-              table={this.state.table}/>
+              groups={this.state.groups}/>
             )}
             />
         </div>

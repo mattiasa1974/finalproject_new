@@ -73,7 +73,7 @@ ul {
 	background-color: #ffe6e6;
 }
 
-.groupbox:focus {
+.groupboxActive {
 	background-color: pink;
 }
 
