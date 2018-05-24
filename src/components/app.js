@@ -415,7 +415,7 @@ class App extends React.Component {
     channel: "TV4"
   }
   ],
-  quarterFinals: {
+  final14: {
     57: null,
     58: null,
     59: null,
@@ -491,6 +491,10 @@ handleScore = (matchId, awayTeam, awayScore,
   const newFinal18 = this.populateCountries()
   this.setState({final18: newFinal18})
 
+  //Set country names for final 14
+  const newFinal14 = this.populateCountries14()
+  this.setState({final14: newFinal14})
+
 }
 
 compareScore = (a, b) => {
@@ -543,6 +547,30 @@ populateCountries = () => {
   })
   return newFinal18
 }
+
+  // QUARTER FINALS
+    populateCountries14 = () => {
+      const { final18 } = this.state
+
+
+      const qualifiedTeams14 = final18.map((game14) => {
+          console.log(final18.awayScore)
+        let country14 = ""
+        if ((game14.awayScore !== null) && (game14.homeScore !== null)) {
+          if (game14.homeScore > game14.awayScore) {
+            console.log("xx")
+            country14 = game14.homeTeam
+          } else { (game14.awayScore > game14.homeScore)
+            console.log("yy")
+            country14 = game14.awayTeam
+
+          }
+        } else {
+        }
+      }
+  )
+
+  }
 
 
   render() {
