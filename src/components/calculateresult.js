@@ -71,6 +71,6 @@ export const calculateResult = (games) => {
         diffScore: diffScore, points: points }
 
     })
-  console.log(result)
+  // console.log(result)
   return result
 }

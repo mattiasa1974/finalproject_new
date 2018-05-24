@@ -427,16 +427,15 @@ class App extends React.Component {
 
 handleScore18 = (matchId, awayTeam, awayScore,
   homeTeam, homeScore) => {
-    const { final18 } = this.state
+    const { final14 } = this.state
 
-    const index = final18.findIndex((game18) => game18.matchId === matchId)
-    final18[index].awayScore = awayScore
-    final18[index].homeScore = homeScore
-
-    this.setState({ final18: final18})
-
-    // quarterFinals[matchId] =
-
+    if (homeScore > awayScore) {
+      final14[matchId] = homeTeam
+    } else if (awayScore > homeScore){
+      final14[matchId] = awayTeam
+    }
+    this.setState({ final14 })
+    console.log(final14)
   }
 
 
@@ -491,10 +490,6 @@ handleScore = (matchId, awayTeam, awayScore,
   const newFinal18 = this.populateCountries()
   this.setState({final18: newFinal18})
 
-  //Set country names for final 14
-  const newFinal14 = this.populateCountries14()
-  this.setState({final14: newFinal14})
-
 }
 
 compareScore = (a, b) => {
@@ -548,29 +543,6 @@ populateCountries = () => {
   return newFinal18
 }
 
-  // QUARTER FINALS
-    populateCountries14 = () => {
-      const { final18 } = this.state
-
-
-      const qualifiedTeams14 = final18.map((game14) => {
-          console.log(final18.awayScore)
-        let country14 = ""
-        if ((game14.awayScore !== null) && (game14.homeScore !== null)) {
-          if (game14.homeScore > game14.awayScore) {
-            console.log("xx")
-            country14 = game14.homeTeam
-          } else { (game14.awayScore > game14.homeScore)
-            console.log("yy")
-            country14 = game14.awayTeam
-
-          }
-        } else {
-        }
-      }
-  )
-
-  }
 
 
   render() {
