@@ -420,9 +420,9 @@ class App extends React.Component {
     {
       matchId: 1,
       country: null,
-      homeTeam: null,
+      homeTeam: "1C / 2D",
       homeTeamIndex: 0,
-      awayTeam: null,
+      awayTeam: "1A / 2B",
       awayTeamIndex: 1,
       date: "",
       time: "",
@@ -431,9 +431,9 @@ class App extends React.Component {
     {
       matchId: 2,
       country: null,
-      homeTeam: null,
+      homeTeam: "1E / 2F",
       homeTeamIndex: 4,
-      awayTeam: null,
+      awayTeam: "1G / 2H",
       awayTeamIndex: 5,
       date: "",
       time: "",
@@ -442,9 +442,9 @@ class App extends React.Component {
     {
       matchId: 3,
       country: null,
-      homeTeam: null,
+      homeTeam: "1F / 2E",
       homeTeamIndex: 6,
-      awayTeam: null,
+      awayTeam: "1H / 2G",
       awayTeamIndex: 7,
       date: "",
       time: "",
@@ -453,9 +453,9 @@ class App extends React.Component {
     {
       matchId: 4,
       country: null,
-      homeTeam: null,
+      homeTeam: "1B / 2A",
       homeTeamIndex: 2,
-      awayTeam: null,
+      awayTeam: "1D / 2C",
       awayTeamIndex: 3,
       date: "",
       time: "",
@@ -466,9 +466,9 @@ class App extends React.Component {
     {
       matchId: 1,
       country: null,
-      homeTeam: null,
+      homeTeam: "Kvartsfinal 1",
       homeTeamIndex: 0,
-      awayTeam: null,
+      awayTeam: "Kvartsfinal 2",
       awayTeamIndex: 1,
       date: "",
       time: "",
@@ -477,9 +477,9 @@ class App extends React.Component {
     {
       matchId: 2,
       country: null,
-      homeTeam: null,
+      homeTeam: "Kvartsfinal 3",
       homeTeamIndex: 2,
-      awayTeam: null,
+      awayTeam: "Kvartsfinal 4",
       awayTeamIndex: 3,
       date: "",
       time: "",
@@ -538,6 +538,31 @@ handleScore18 = (matchId, awayTeam, awayScore,
     this.setState({ final14 })
     console.log("hejhej")
   }
+
+  handleScore14 = (matchId, awayTeam, awayScore,
+    homeTeam, homeScore) => {
+      const { final12 } = this.state
+
+      const index = final12.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
+      if(final12[index].homeTeamIndex === matchId){
+        // console.log("hej")
+        if (homeScore > awayScore) {
+          final12[index].homeTeam = homeTeam
+        }else{
+          final12[index].homeTeam = awayTeam
+        }
+      }else{
+        // console.log("hi")
+        if (homeScore > awayScore) {
+          final12[index].awayTeam = homeTeam
+        }else{
+          final12[index].awayTeam = awayTeam
+        }
+      }
+
+      this.setState({ final12 })
+      console.log("hejhej")
+    }
 
 
 handleScore = (matchId, awayTeam, awayScore,
@@ -691,7 +716,7 @@ populateCountries = () => {
         <div>
           <Final14
             table={this.state.table}
-          addScore = {this.handleScore18}
+          addScore = {this.handleScore14}
           final14={this.state.final14} />
         </div>
       </div>

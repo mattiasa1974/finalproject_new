@@ -24,7 +24,6 @@ render() {
                     game={final18Data} />)
           })}
 
-          <h1>hw</h1>
         </div>
     )
   }

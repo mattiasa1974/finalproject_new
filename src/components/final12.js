@@ -1,7 +1,7 @@
 import React from "react"
 import Game from "./game"
 
-class Final14 extends React.Component {
+class Final12 extends React.Component {
 
 
 
@@ -12,14 +12,14 @@ render() {
     return (
         <div>
           <div className="groupstage-headline">
-            <p><span> KVARTSFINAL </span></p>
+            <p><span> SEMIFINAL </span></p>
           </div>
-          {this.props.final14.map((final14Data) => {
+          {this.props.final12.map((final12Data) => {
 
 
             return (<Game
                     addScore={this.props.addScore}
-                    game={final14Data} />)
+                    game={final12Data} />)
           })}
 
         </div>
@@ -27,4 +27,4 @@ render() {
   }
 }
 
-    export default Final14
+    export default Final12
