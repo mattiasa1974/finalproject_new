@@ -461,7 +461,55 @@ class App extends React.Component {
       time: "",
       channel: ""
     }
-  ]
+  ],
+  final12:[
+    {
+      matchId: 1,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 0,
+      awayTeam: null,
+      awayTeamIndex: 1,
+      date: "",
+      time: "",
+      channel: ""
+    },
+    {
+      matchId: 2,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 2,
+      awayTeam: null,
+      awayTeamIndex: 3,
+      date: "",
+      time: "",
+      channel: ""
+    }
+  ],
+  final:[
+    {
+      matchId: 1,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 0,
+      awayTeam: null,
+      awayTeamIndex: 1,
+      date: "",
+      time: "",
+      channel: ""
+    },
+    {
+      matchId: 2,
+      country: null,
+      homeTeam: null,
+      homeTeamIndex: 2,
+      awayTeam: null,
+      awayTeamIndex: 3,
+      date: "",
+      time: "",
+      channel: ""
+    }
+    ]
   }
 
 }
