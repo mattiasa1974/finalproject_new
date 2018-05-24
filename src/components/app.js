@@ -6,6 +6,7 @@ import "./groupnavigationcomponent.css"
 import "./group.css"
 import Final18 from "./final18"
 import Final14 from "./final14"
+import Final12 from "./final12"
 
 class App extends React.Component {
 
@@ -564,6 +565,30 @@ handleScore18 = (matchId, awayTeam, awayScore,
       console.log("hejhej")
     }
 
+    handleScore12 = (matchId, awayTeam, awayScore,
+      homeTeam, homeScore) => {
+        const { final } = this.state
+
+        const index = final.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
+        if(final[index].homeTeamIndex === matchId){
+          // console.log("hej")
+          if (homeScore > awayScore) {
+            final[index].homeTeam = homeTeam
+          }else{
+            final[index].homeTeam = awayTeam
+          }
+        }else{
+          // console.log("hi")
+          if (homeScore > awayScore) {
+            final[index].awayTeam = homeTeam
+          }else{
+            final[index].awayTeam = awayTeam
+          }
+        }
+
+        this.setState({ final })
+      }
+
 
 handleScore = (matchId, awayTeam, awayScore,
   homeTeam, homeScore) => {
@@ -718,6 +743,12 @@ populateCountries = () => {
             table={this.state.table}
           addScore = {this.handleScore14}
           final14={this.state.final14} />
+        </div>
+        <div>
+          <Final12
+            table={this.state.table}
+          addScore = {this.handleScore12}
+          final12={this.state.final12} />
         </div>
       </div>
 
