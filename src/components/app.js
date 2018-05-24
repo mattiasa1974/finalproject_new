@@ -5,6 +5,7 @@ import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
 import "./group.css"
 import Final18 from "./final18"
+import Final14 from "./final14"
 
 class App extends React.Component {
 
@@ -417,7 +418,7 @@ class App extends React.Component {
   ],
   final14:[
     {
-      matchId: 2,
+      matchId: 1,
       country: null,
       homeTeam: null,
       homeTeamIndex: 0,
@@ -448,7 +449,8 @@ class App extends React.Component {
       date: "",
       time: "",
       channel: ""
-    },{
+    },
+    {
       matchId: 4,
       country: null,
       homeTeam: null,
@@ -470,12 +472,14 @@ handleScore18 = (matchId, awayTeam, awayScore,
 
     const index = final14.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
     if(final14[index].homeTeamIndex === matchId){
+      // console.log("hej")
       if (homeScore > awayScore) {
         final14[index].homeTeam = homeTeam
       }else{
         final14[index].homeTeam = awayTeam
       }
     }else{
+      // console.log("hi")
       if (homeScore > awayScore) {
         final14[index].awayTeam = homeTeam
       }else{
@@ -484,7 +488,7 @@ handleScore18 = (matchId, awayTeam, awayScore,
     }
 
     this.setState({ final14 })
-    console.log(final14)
+    console.log("hejhej")
   }
 
 
@@ -635,6 +639,12 @@ populateCountries = () => {
             table={this.state.table}
           addScore = {this.handleScore18}
           final18={this.state.final18} />
+        </div>
+        <div>
+          <Final14
+            table={this.state.table}
+          addScore = {this.handleScore18}
+          final14={this.state.final14} />
         </div>
       </div>
 
