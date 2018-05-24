@@ -422,9 +422,9 @@ class App extends React.Component {
       matchId: 1,
       country: null,
       homeTeam: "1C / 2D",
-      homeTeamIndex: 0,
+      homeTeamIndex: 1,
       awayTeam: "1A / 2B",
-      awayTeamIndex: 1,
+      awayTeamIndex: 2,
       date: "",
       time: "",
       channel: ""
@@ -433,9 +433,9 @@ class App extends React.Component {
       matchId: 2,
       country: null,
       homeTeam: "1E / 2F",
-      homeTeamIndex: 4,
+      homeTeamIndex: 5,
       awayTeam: "1G / 2H",
-      awayTeamIndex: 5,
+      awayTeamIndex: 6,
       date: "",
       time: "",
       channel: ""
@@ -444,9 +444,9 @@ class App extends React.Component {
       matchId: 3,
       country: null,
       homeTeam: "1F / 2E",
-      homeTeamIndex: 6,
+      homeTeamIndex: 7,
       awayTeam: "1H / 2G",
-      awayTeamIndex: 7,
+      awayTeamIndex: 8,
       date: "",
       time: "",
       channel: ""
@@ -455,9 +455,9 @@ class App extends React.Component {
       matchId: 4,
       country: null,
       homeTeam: "1B / 2A",
-      homeTeamIndex: 2,
+      homeTeamIndex: 3,
       awayTeam: "1D / 2C",
-      awayTeamIndex: 3,
+      awayTeamIndex: 4,
       date: "",
       time: "",
       channel: ""
@@ -468,9 +468,9 @@ class App extends React.Component {
       matchId: 1,
       country: null,
       homeTeam: "Kvartsfinal 1",
-      homeTeamIndex: 0,
+      homeTeamIndex: 1,
       awayTeam: "Kvartsfinal 2",
-      awayTeamIndex: 1,
+      awayTeamIndex: 2,
       date: "",
       time: "",
       channel: ""
@@ -479,9 +479,9 @@ class App extends React.Component {
       matchId: 2,
       country: null,
       homeTeam: "Kvartsfinal 3",
-      homeTeamIndex: 2,
+      homeTeamIndex: 3,
       awayTeam: "Kvartsfinal 4",
-      awayTeamIndex: 3,
+      awayTeamIndex: 4,
       date: "",
       time: "",
       channel: ""
@@ -492,9 +492,9 @@ class App extends React.Component {
       matchId: 1,
       country: null,
       homeTeam: null,
-      homeTeamIndex: 0,
+      homeTeamIndex: 1,
       awayTeam: null,
-      awayTeamIndex: 1,
+      awayTeamIndex: 2,
       date: "",
       time: "",
       channel: ""
@@ -503,9 +503,9 @@ class App extends React.Component {
       matchId: 2,
       country: null,
       homeTeam: null,
-      homeTeamIndex: 2,
+      homeTeamIndex: 3,
       awayTeam: null,
-      awayTeamIndex: 3,
+      awayTeamIndex: 4,
       date: "",
       time: "",
       channel: ""
@@ -520,6 +520,9 @@ handleScore18 = (matchId, awayTeam, awayScore,
     const { final14 } = this.state
 
     const index = final14.findIndex((game) => game.homeTeamIndex === matchId || game.awayTeamIndex === matchId)
+    console.log("index", index)
+    console.log("matchId", matchId)
+    console.log("final14", final14)
     if(final14[index].homeTeamIndex === matchId){
       // console.log("hej")
       if (homeScore > awayScore) {
@@ -537,7 +540,6 @@ handleScore18 = (matchId, awayTeam, awayScore,
     }
 
     this.setState({ final14 })
-    console.log("hejhej")
   }
 
   handleScore14 = (matchId, awayTeam, awayScore,
@@ -562,7 +564,6 @@ handleScore18 = (matchId, awayTeam, awayScore,
       }
 
       this.setState({ final12 })
-      console.log("hejhej")
     }
 
     handleScore12 = (matchId, awayTeam, awayScore,
