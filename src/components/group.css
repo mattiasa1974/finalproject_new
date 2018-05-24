@@ -16,11 +16,13 @@
   display: flex;
   flex-direction: column;
   padding: 5px 15px;
+  width: 7.5%;
 }
 
 .country {
   display: flex;
   flex-direction: column;
   padding: 5px 15px;
-  width: 100px;
+  width: 40%;
+  /* width: 100px; */
 }

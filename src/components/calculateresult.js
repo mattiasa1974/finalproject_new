@@ -3,11 +3,11 @@
 const countries = ["Ryssland", "Egypten",
 "Uruguay", "Saudiarabien", "Marocko",
 "Iran", "Portugal", "Spanien",
-"Frankrike", "Australien", "Argentina",
-"Island", "Costa Rica", "Serbien",
-"Tyskland", "Mexiko", "Belgien",
-"Panama", "Colombia",
- "Japan" ]
+"Frankrike", "Australien", "Peru", "Danmark", "Argentina",
+"Island", "Kroatien", "Nigeria", "Costa Rica", "Serbien",
+"Brasilien", "Schweiz", "Tyskland", "Mexiko", "Sverige", "Sydkorea", "Belgien",
+"Tunisien", "England", "Panama", "Colombia",
+ "Japan", "Polen", "Senegal" ]
 
 export const calculateResult = (games) => {
   const result = countries.map((country) => {

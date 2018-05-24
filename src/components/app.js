@@ -30,6 +30,42 @@ class App extends React.Component {
         totAgainstScore: "0",
         diffScore: "0",
         points: "0"
+      },
+      {
+        group: "A",
+        country: "Saudiarabien",
+        playedGames: "0",
+        wins: "0",
+        draws: "0",
+        losts: "0",
+        totOwnScore: "0",
+        totAgainstScore: "0",
+        diffScore: "0",
+        points: "0"
+      },
+      {
+        group: "A",
+        country: "Egypten",
+        playedGames: "0",
+        wins: "0",
+        draws: "0",
+        losts: "0",
+        totOwnScore: "0",
+        totAgainstScore: "0",
+        diffScore: "0",
+        points: "0"
+      },
+      {
+        group: "A",
+        country: "Uruguay",
+        playedGames: "0",
+        wins: "0",
+        draws: "0",
+        losts: "0",
+        totOwnScore: "0",
+        totAgainstScore: "0",
+        diffScore: "0",
+        points: "0"
       }
     ],
     games:[
@@ -997,7 +1033,7 @@ populateCountries = () => {
 
   render() {
 
-    const groupIdFromUrl = "C"
+    const groupIdFromUrl = ""
 
     return (
       <div>
