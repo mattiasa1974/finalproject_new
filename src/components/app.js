@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom"
+import { HashRouter, Route, NavLink } from "react-router-dom"
 import Group from "./group"
 import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
@@ -1044,7 +1044,7 @@ populateCountries = () => {
         <div className="groupstage-headline">
           <p>Gruppspel</p>
         </div>
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <ul className="grouprow">
             <li><NavLink activeClassName={"groupboxActive"} to="/A" className="groupbox">A</NavLink></li>
@@ -1066,7 +1066,7 @@ populateCountries = () => {
             )}
             />
         </div>
-      </BrowserRouter>
+      </HashRouter>
         <div>
           <Final18
             table={this.state.table}
