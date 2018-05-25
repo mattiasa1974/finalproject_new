@@ -67,7 +67,6 @@ class Game extends React.Component {
             <p>Ditt tips:</p>
           </div>
           <div className="inputfields">
-            <label >
               <input className="input"
                 value={this.state.homeScore}
                 onChange={this.handleChangeHomeScore}
@@ -78,7 +77,6 @@ class Game extends React.Component {
                 type="number"
                 value={this.state.awayScore}>
               </input>
-            </label>
           </div>
         </div>
       </div>
