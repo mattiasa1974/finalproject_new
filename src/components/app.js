@@ -978,6 +978,19 @@ handleScore = (matchId, awayTeam, awayScore,
 
 }
 
+// pym.js
+
+componentDidMount() {
+
+        const pym = require('pym.js'); // We use require since import can't be used inside an if-statement.
+        const pymChild = pym.Child({polling: 250}); // Poll for height changes every 250ms and send to parent. (read the Pym docs for more info)
+        pymChild.sendMessage('init');
+
+
+}
+
+// slut pym.js
+
 compareScore = (a, b) => {
   if(a.points < b.points){
     return true
