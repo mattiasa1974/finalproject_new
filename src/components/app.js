@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom"
+import { HashRouter, Route, NavLink } from "react-router-dom"
 import Group from "./group"
 import { calculateResult } from "./calculateresult"
 import "./groupnavigationcomponent.css"
@@ -978,6 +978,19 @@ handleScore = (matchId, awayTeam, awayScore,
 
 }
 
+// pym.js
+
+componentDidMount() {
+
+        const pym = require('pym.js'); // We use require since import can't be used inside an if-statement.
+        const pymChild = pym.Child({polling: 250}); // Poll for height changes every 250ms and send to parent. (read the Pym docs for more info)
+        pymChild.sendMessage('init');
+
+
+}
+
+// slut pym.js
+
 compareScore = (a, b) => {
   if(a.points < b.points){
     return true
@@ -1044,7 +1057,7 @@ populateCountries = () => {
         <div className="groupstage-headline">
           <p>Gruppspel</p>
         </div>
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <ul className="grouprow">
             <li><NavLink activeClassName={"groupboxActive"} to="/A" className="groupbox">A</NavLink></li>
@@ -1066,7 +1079,7 @@ populateCountries = () => {
             )}
             />
         </div>
-      </BrowserRouter>
+      </HashRouter>
         <div>
           <Final18
             table={this.state.table}
