@@ -14,7 +14,7 @@ class Maincontainer extends React.Component {
   }
 
   onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
+    return self.indexOf(value) === index
   }
 
   render() {
@@ -24,12 +24,12 @@ class Maincontainer extends React.Component {
 
     // get all games from group A
 
-    const groupA = this.props.games.filter((game) => {
-      return game.group === "A"
-    })
-    console.log(groupA)
-
-
+    // const groupA = this.props.games.filter((game) => {
+    //   return game.group === "A"
+    // })
+    // console.log(groupA)
+    //
+    // const first = this.state.games[0]
 
 
 
@@ -40,6 +40,8 @@ class Maincontainer extends React.Component {
         // send all groups as prop
         <GroupNavigationscontainer games={this.props.games} groups={uniqueGroups}/>
         <Group A={groupA} />
+
+        <Game game={first} />
 
 
 
