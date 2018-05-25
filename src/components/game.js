@@ -18,22 +18,30 @@ class Game extends React.Component {
   }
 
   handleChangeHomeScore = event => {
-    // console.log('handleChangeHomeScore', event.target.value);
+    // console.log("event.target.value", event.target.value)
+    // console.log("this.state.homeScore", this.state.awayScore)
+    this.setState({
+      homeScore: event.target.value,
+    })
     if (this.state.awayScore !== null) {
       console.log('here')
       this.props.addScore(this.props.game.matchId,
         this.props.game.awayTeam,
-        this.state.newAwayScore,
+        this.state.awayScore,
         this.props.game.homeTeam,
         event.target.value)
     }
 
-    this.setState({
-      homeScore: event.target.value,
-    })
   }
 
   handleChangeAwayScore = event => {
+    // console.log("event.target.value", event.target.value)
+    // console.log("this.state.homeScore", this.state.homeScore)
+    this.setState({
+      awayScore: event.target.value
+    })
+
+
     if (this.state.homeScore !== null) {
       this.props.addScore(this.props.game.matchId,
         this.props.game.awayTeam,
@@ -42,9 +50,7 @@ class Game extends React.Component {
         this.state.homeScore)
     }
 
-    this.setState({
-      awayScore: event.target.value
-    })
+
   }
 
   render() {

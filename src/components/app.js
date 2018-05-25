@@ -934,6 +934,7 @@ handleScore = (matchId, awayTeam, awayScore,
   games[index].awayScore = awayScore
   games[index].homeScore = homeScore
 
+  console.log("hejjjj", this.state.awayScore)
 
   // const newAwayScore = this.state.awayScore
   this.setState({ games: games })
