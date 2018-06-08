@@ -3,11 +3,7 @@ import Game from "./game"
 
 class Brons extends React.Component {
 
-
-
 render() {
-
-  // console.log(this.props.final14)
 
     return (
         <div>

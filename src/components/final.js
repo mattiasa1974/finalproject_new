@@ -3,12 +3,7 @@ import Game from "./game"
 
 class Final extends React.Component {
 
-
-
-render() {
-
-  // console.log(this.props.final14)
-
+ render() {
     return (
         <div>
           <div className="groupstage-headline">

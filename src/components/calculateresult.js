@@ -1,13 +1,11 @@
-
-
 const countries = ["Ryssland", "Egypten",
-"Uruguay", "Saudiarabien", "Marocko",
-"Iran", "Portugal", "Spanien",
-"Frankrike", "Australien", "Peru", "Danmark", "Argentina",
-"Island", "Kroatien", "Nigeria", "Costa Rica", "Serbien",
-"Brasilien", "Schweiz", "Tyskland", "Mexiko", "Sverige", "Sydkorea", "Belgien",
-"Tunisien", "England", "Panama", "Colombia",
- "Japan", "Polen", "Senegal" ]
+  "Uruguay", "Saudiarabien", "Marocko",
+  "Iran", "Portugal", "Spanien",
+  "Frankrike", "Australien", "Peru", "Danmark", "Argentina",
+  "Island", "Kroatien", "Nigeria", "Costa Rica", "Serbien",
+  "Brasilien", "Schweiz", "Tyskland", "Mexiko", "Sverige", "Sydkorea", "Belgien",
+  "Tunisien", "England", "Panama", "Colombia",
+  "Japan", "Polen", "Senegal"]
 
 export const calculateResult = (games) => {
   const result = countries.map((country) => {
@@ -42,7 +40,6 @@ export const calculateResult = (games) => {
             }
           } else if (country === game.awayTeam) {
 
-
               playedGames += 1
               totOwnScore += parseInt(game.awayScore)
               totAgainstScore += parseInt(game.homeScore)
@@ -62,15 +59,10 @@ export const calculateResult = (games) => {
     } else {
 
     }
-
       })
 
-      return { group: group, country: country, playedGames: playedGames,
-        wins: wins, draws: draws, losts: losts,
-        totOwnScore: totOwnScore, totAgainstScore: totAgainstScore,
-        diffScore: diffScore, points: points }
+      return { group: group, country: country, playedGames: playedGames, wins: wins, draws: draws, losts: losts, totOwnScore: totOwnScore, totAgainstScore: totAgainstScore, diffScore: diffScore, points: points }
 
     })
-  // console.log(result)
   return result
 }

@@ -1,16 +1,11 @@
 import React from "react"
 import "./groupnavigationcomponent.css"
 
-
-
 class Groupnavigationcomponent extends React.Component {
 
   constructor(props) {
     super(props)
-
   }
-
-
 
   render() {
     return (

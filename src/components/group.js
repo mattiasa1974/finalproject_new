@@ -2,11 +2,7 @@ import React from "react"
 import Game from "./game"
 import "./group.css"
 
-
 class Group extends React.Component {
-
-
-
 
   render() {
 
@@ -21,7 +17,7 @@ class Group extends React.Component {
             {
              return (<Game
                     addScore = {addScore}
-                    game={gameData}
+                    game= {gameData}
                      />)
           }
         })}
@@ -31,8 +27,6 @@ class Group extends React.Component {
         </div>
         <div className="table-container">
           { group.map((tableData) => {
-            // console.log(tableData.group)
-            // console.log(this.props.match.params.groupId)
              return (
                     <div className="table-row">
                       <div className="table-item country">{tableData.country}</div>
@@ -55,5 +49,3 @@ class Group extends React.Component {
 }
 
 export default Group
-// { this.props.groupmatches.map(groupA =>  <Game game={this.props.games} />) }
-// { this.props.gamesA.map(matchA =>  <Game group={group} />) }
